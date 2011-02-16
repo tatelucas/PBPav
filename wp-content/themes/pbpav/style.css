@@ -1,0 +1,504 @@
+/*  
+Theme Name: Powerbalance Pavilion
+Theme URI: http://www.pbpav.com
+Description: A Custom Theme for Powerbalance Pavilion
+Version: 1.0
+Author: Tate Lucas
+Author URI: http://www.tatelucas.com
+
+The CSS, XHTML and design is released under GPL:
+http://www.opensource.org/licenses/gpl-license.php
+
+
+TABLE OF CONTENTS
+ 
+  Inherited Styles
+  HTML Tags
+  Structure
+  Headers
+  Content Styles
+  Form Elements
+  Footer
+  
+
+
+/* ---------- @ Inherited Styles -----------*/
+
+@import url('css/nav.css');
+@import url('css/posts.css');
+
+
+
+/* ---------- @ HTML Tags -----------*/
+
+
+* {
+	margin:0;
+	padding:0;
+	outline:none;
+	}
+
+body,html {
+	min-height:101%; /*Firefox scrollbar fix*/
+	}
+	
+body {
+	background:#616161;
+	color: #111;
+	padding:20px 0;
+	}
+
+body, select, input, textarea {
+	font: 100% Arial, Verdana, Sans-Serif /*Global font-size reset*/;
+	}
+	
+p {	
+	margin: 15px 0;
+	line-height:160%;
+	}
+
+a, a:visited {
+	color: #83a7ba;
+	}
+
+a:hover, a:active {
+	color:#4d778d;
+	}
+	
+hr {
+	display: block;
+	height:1px;
+	background:#CCC;
+	border:0;
+	color:#CCC;
+	}
+
+table {
+	border-collapse:collapse;
+	width:100%;
+	margin:15px 0;
+	}
+
+td {
+	padding:4px 6px;
+	border-top:1px solid #CCC;
+	}
+
+tr {
+	background:#e3e3e3;
+	}
+	
+table caption {
+	background:#FFF;
+	padding:2px 0;
+	}	
+	
+blockquote {
+	color:#7b7b7b;
+	padding:0 18px;
+	margin:25px 45px;
+	border-left:3px solid #CCC;
+	font:italic 1em Georgia, "Times New Roman", Times, serif;
+	letter-spacing:.03em;
+	}
+
+
+
+/* ---------- @ Structure -----------*/
+
+#main {
+	overflow:hidden;
+	padding:30px 30px 50px;
+}
+
+#wrapper {
+	font-size:.8em /*Global content font-size*/;
+	width:960px;
+	margin:0 auto;
+	background:#FFF;
+	overflow: hidden
+	}
+
+#masthead {
+	background:#dadada;
+	padding:28px 28px 24px;
+	overflow:hidden;
+	}
+
+#branding {
+	float:left;
+	width:575px;
+	}
+	
+#content {
+	width:565px;
+	float:left
+	}
+
+#sidebar {
+	width: 260px;
+	float:right;
+	background:#f2f2f2;
+	padding:0 20px 20px;
+	}
+
+.left {
+	float:left
+	}
+
+.right {
+	float:right
+	}
+	
+	
+	
+	
+/* ---------- @ Headers -----------*/
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight:normal;
+	}
+
+h1.pagetitle {
+	border-bottom:1px solid #d7d7d7;
+	padding-bottom: 12px;
+	margin-bottom:20px;
+	}
+	
+h2 {
+	margin: 25px 0 20px;
+	}
+
+.entry h2 {
+	font-size:1.8em;
+	margin: 15px 0 0;
+	}
+	
+h2.posttitle, h1.posttitle {
+	margin:0;
+	font-size: 2.2em;
+	}
+
+#sidebar h3 {
+	border-bottom:3px solid #CCC;
+	padding-bottom:5px;
+	margin:22px 0 10px;
+	color:#939393;
+	font:normal .85em Arial, Helvetica, sans-serif;
+	letter-spacing:.08em;
+	text-transform:uppercase
+	}
+
+.entry h3 {
+	font:1.6em Georgia, "Times New Roman", Times, serif;
+	}
+	
+#respond h3, h3#comments, h3#trackbacks {
+	margin:45px 0 20px;
+	font-weight:bold;
+	}
+
+h3#comments {
+	margin:32px 0 12px;
+	}
+
+h4 {
+	font-size:1.4em; 
+	}
+	
+h5 {
+	font-weight: bold;
+	font-size: 1.2em
+	}
+
+h6 {
+	font-weight: bold;
+	font-size: 1em;
+	}
+
+
+
+	
+/* ---------- @ Content Styles -----------*/
+
+/*Misc*/
+
+#logo {
+	font: bold 2.7em Georgia, "Times New Roman", Times, serif;
+	}
+
+#description {
+	font: italic 1.2em Georgia, "Times New Roman", Times, serif;
+	color:#939393;
+	margin:0;
+	}
+	
+.commentcount {
+	padding-left: 17px;
+	background:url(images/bubble.gif) no-repeat;
+	margin-left:14px;
+	}
+
+.more-link {
+	display:block;
+	margin-top:12px;
+	clear:both
+	}
+
+
+
+/* Author Page*/
+
+#writer {
+	overflow:hidden;
+	background:#f2f2f2;
+	margin-bottom:20px;
+	padding:16px;
+	}
+
+#writer p {
+	margin-top:0;
+	}
+		
+#writer .avatar {
+	margin:4px 17px 7px 0
+	}
+
+
+
+/* Search and Archives*/
+
+.search-highlight {
+	background:#FFFF00	
+	}
+
+#comment_pagination {
+	margin-top:22px;
+	overflow:hidden;
+	}
+
+#archive_pagination {
+	overflow: hidden;
+	padding: 20px;
+	text-align: center
+	}
+	
+.current-numeric-page {
+	padding: 5px 8px;
+	}
+	
+#archive_pagination a, #archive_pagination a:visited {
+	border:1px solid #CCC;
+	padding: 5px 8px;
+	text-decoration: none;
+	}
+	
+#archive_pagination a:hover {
+	background: #f5f5f5;
+	}
+
+#archive_pagination a:active {
+	background:#e6e6e6;
+	border-color:#bebebe;
+	}
+		
+#comment_pagination div {
+	float:left;
+	margin-right:10px;
+	}
+
+a #icon-rss {
+	border:none
+	}
+
+.archive #icon-rss {
+	vertical-align: middle;
+	margin-left:3px;
+	}		
+		
+	
+
+/*Sidebar and Widgets*/
+
+.widget {
+	margin-bottom:20px;
+	overflow:hidden
+	}
+	
+.widget li {
+	list-style:none;
+	border-bottom:1px solid #CCC;
+	padding:6px 0;
+	line-height:140%;
+	}
+
+.widget li a, .widget li a:visited {
+	color:#111;
+	text-decoration:none
+	}
+
+.widget li a:hover, .widget li a:active {
+	color:#6d6d6d;
+	}
+
+.widget li.current_page_item a, .widget li.current_page_item a:visited, 
+.widget li.current-cat a, .widget.current-cat a:visited {
+	font-weight:bold
+	}
+
+.widget li.current_page_item li a, .widget li.current_page_item li a:visited, 
+.widget li.current-cat li a, .widget li-current-cat li a:visited {
+	font-weight:normal;
+	}
+			
+.widget li li {
+	margin-left:34px;
+	border:0;
+	list-style:disc;
+	}
+
+#wp-calendar tr {
+	background:#f2f2f2;
+	}
+	
+#wp-calendar td {
+	text-align:center;
+	padding:3px;
+	}	
+	
+#recentcomments {
+	color: #787878;
+	}
+
+#recentcomments a, #recentcomments a:visited {
+	font-style:italic
+	}
+
+#recentcomments a.url, #recentcomments a.url:visited {
+	font-weight:bold;
+	font-style:normal;
+	}
+
+a.rsswidget, a.rsswidget:visited {
+	font-weight: bold
+	}
+
+.rssSummary {
+	line-height:160%;
+	}
+	
+#wp125adwrap_2c {
+	overflow:hidden
+	}
+
+#wp125adwrap_2c .wp125ad {
+	float:left;
+	margin-right: 8px;
+	}	
+
+.wp125ad a img {
+	border:none;
+	}
+
+#wp125adwrap_2c div+div {
+	margin:0 !important;
+	}
+
+#footer-widgets {
+	overflow: hidden;
+	background: #f1f1f1;
+	}
+	
+#footer-widgets .widget {
+	width: 270px;
+	float: left;
+	margin: 0 20px 0 30px;
+	padding:20px 0 35px;
+	} 		
+	
+	
+/* ---------- @ Form Elements -----------*/
+
+#author, #email, #comment, #url, #searchfield {
+	background:#FFF !important;
+	padding:5px;
+	border-width:1px;
+	border-style:solid;
+	border-color: #6d6d6d #bfbfbf #bfbfbf #6d6d6d;
+	}
+
+#author, #email, #url {
+	width:220px;
+	}
+		
+.button {
+	padding: 8px 14px;
+	background:#424242;
+	color:#FFF !important;
+	border:none;
+	font-size:1.2em;
+	}
+
+.button:hover {
+	background:#272727;
+	}
+
+.button:active {
+	background:#000;
+	}
+
+#commentform textarea {
+	width: 98%;
+	height:250px;
+	}
+
+#masthead #searchform {
+	float:right;
+	width:260px;
+	text-align:right;
+	padding-top:12px;
+	}
+
+#searchfield {
+	width:220px;
+	}
+	
+#searchsubmit {
+	vertical-align:top
+	}		
+	
+
+
+
+/* ---------- @ Footer -----------*/
+
+#footer {
+	font-size:.8em;
+	overflow:hidden;
+	width:900px;
+	margin:0 auto;
+	color:#dadada;
+	padding: 18px 0;
+	}
+
+#footer a:hover, #footer a:active {
+	color:#FFF;
+	}
+
+#footer .left {
+	float:left;
+	width:50%;
+	}
+
+#footer.right {
+	float:right;
+	width:50%;
+	text-align: right
+	}
+	
+#footer #icon-rss {
+	vertical-align: middle;
+	margin-right:5px;
+	}
+		
