@@ -31,6 +31,7 @@ load_theme_textdomain('gravy');
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'gravy' ),
+		'kings' => __( 'Kings Navigation', 'gravy' )
 	) );
 
 /* Custom Background ********************************************/

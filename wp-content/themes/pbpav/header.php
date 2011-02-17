@@ -28,26 +28,24 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
 <body <?php body_class(); ?>>
 <div id="wrapper">
 
-<div id="masthead"<?php if (get_header_image() != '') {?> style="background:url(<?php header_image(); ?>) no-repeat;"<?php } ?>>
+<div id="masthead">
 
   <div id="branding">
-    <?php if (is_home() && !is_paged()) { ?>
-    <div id="logo"><?php bloginfo('name'); ?></div>
-    <h1 id="description"><?php bloginfo('description'); ?></h1>
-    <?php } else { ?>
-    <div id="logo"><a href="<?php echo get_option('home'); ?>/" title="<?php _e('Home','gravy'); ?>">
-      <?php bloginfo('name'); ?>
-      </a></div>
-    <div id="description">
-      <?php bloginfo('description'); ?>
-    </div>
-    <?php } ?>
+    <div id="logo">
+      <a href="<?php echo get_option('home'); ?>/" title="<?php _e('Home','gravy'); ?>"><?php bloginfo('name'); ?></a>
+    </div><!--/logo-->
   </div><!--/branding-->
   
+  <div class="kingsnavcont">
+    <?php wp_nav_menu( array( 'container_class' => 'kings-nav', 'theme_location' => 'kings' ) ); ?>
+  </div><!--/kingsnavcont-->
+  
+  <div class="searchform">
   <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
     <input type="text" value="<?php the_search_query(); ?>" name="s" id="searchfield" />
     <input type="image" src="<?php bloginfo('template_url'); ?>/images/magnify.gif" id="searchsubmit" alt="search button" />
   </form>
+  </div><!--/searchform-->
 </div><!--/masthead-->
 
 
