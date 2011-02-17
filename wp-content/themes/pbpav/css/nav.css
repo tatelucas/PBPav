@@ -1,9 +1,35 @@
 /*Top Page Navbar */
 
+.topnavcont {
+  float: left;
+  height: 40px;
+  width: 896px;  
+}
+
+.top-nav {
+  width: 615px;
+  margin: 3px 10px 0 0;
+  float: left;
+  padding: 0;
+}
+
 .top-nav, div.menu {
-	background:#41414a;
-	padding-top:4px;
 	}
+
+.top-nav li {
+  font-size: 42px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  padding: 0;
+  margin: 0;  
+}
+
+.top-nav li a {
+  color: #fff;
+  padding: 0;
+  margin: 0;  
+}
 
 #sidebar .top-nav ul.menu {
 	background: transparent;
@@ -14,14 +40,14 @@
 	list-style: none;
 	z-index:1;
 	line-height: 1.0;
-	padding:0 20px;
+	padding:0;
 	display:inline-block;
 	vertical-align: bottom
 	}
 
 .top-nav ul.menu li, div.menu ul.menu li {
 	float: left;
-	margin-right:10px;
+	margin-right: 0;
 	position:relative;
 	list-style:none
 	}
@@ -31,7 +57,7 @@ div.menu ul.menu a, div.menu ul.menu a:visited {
 	display: block;
 	text-decoration: none;
 	color:#dadada;
-	padding:8px 22px 10px;
+	padding:0 22px 0 0;
 	}
 
 .top-nav ul.menu a:hover, div.menu ul.menu a:hover {
@@ -174,4 +200,19 @@ div.menu .menu li li li.sfhover ul {
 	background-image:url(../images/arrow_child.gif) !important;
 	}
 	
-	
+.kings-nav ul li {
+  list-style: none;
+  display: inline;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.kings-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+		
+.kings-nav ul li a:hover {
+  color: #e1e1e1;
+}		

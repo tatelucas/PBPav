@@ -19,6 +19,8 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
+<script type="text/javascript" src="http://use.typekit.com/nmd4bln.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <?php nav_animation(); ?>
 <?php wp_head(); ?>
@@ -40,15 +42,21 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
     <?php wp_nav_menu( array( 'container_class' => 'kings-nav', 'theme_location' => 'kings' ) ); ?>
   </div><!--/kingsnavcont-->
   
-  <div class="searchform">
-  <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-    <input type="text" value="<?php the_search_query(); ?>" name="s" id="searchfield" />
-    <input type="image" src="<?php bloginfo('template_url'); ?>/images/magnify.gif" id="searchsubmit" alt="search button" />
-  </form>
-  </div><!--/searchform-->
+  <div class="topnavcont">
+    <?php wp_nav_menu( array( 'container_class' => 'top-nav', 'theme_location' => 'primary' ) ); ?>
+
+    <div class="searchform">
+      <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+        <input type="text" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" value="<?php if ($_REQUEST['s']) { the_search_query(); } else { echo 'Search'; } ?>" name="s" id="searchfield" />
+        <input type="submit" value="Go" id="searchsubmit" alt="search button" />
+        <a href="#" class="searchweb">Web</a>
+      </form>
+    </div><!--/searchform-->
+
+  </div>
+    
+
 </div><!--/masthead-->
 
-
-<?php wp_nav_menu( array( 'container_class' => 'top-nav', 'theme_location' => 'primary' ) ); ?>
 <div id="main">
 
