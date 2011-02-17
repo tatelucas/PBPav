@@ -45,6 +45,10 @@
                 jQuery("li.page_item a").each(function(){ // Remove Titles from wp_list_pages
                     jQuery(this).removeAttr('title');
                 })
+                jQuery('.kings-nav li').first().css('background', 'none');                
+                jQuery('.kings-nav li').first().css('padding', '2px');
+                jQuery('.top-nav li').last().css('background', 'none'); 
+                jQuery('.top-nav li').first().css('padding', '0px');
         </script>
         
 </body>

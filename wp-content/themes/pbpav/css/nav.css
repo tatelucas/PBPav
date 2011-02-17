@@ -21,8 +21,10 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: -3px;
-  padding: 0;
+  padding: 0 0 0 7px;
   margin: 0;  
+  height: 39px;
+  background: url(../images/topnavbg.gif) no-repeat right 5px;
 }
 
 .top-nav li a {
@@ -56,8 +58,8 @@
 div.menu ul.menu a, div.menu ul.menu a:visited {
 	display: block;
 	text-decoration: none;
-	color:#dadada;
-	padding:0 22px 0 0;
+	color:#fff;
+	padding:0 15px 0 0;
 	}
 
 .top-nav ul.menu a:hover, div.menu ul.menu a:hover {
@@ -65,7 +67,7 @@ div.menu ul.menu a, div.menu ul.menu a:visited {
 	}
 
 .top-nav ul.menu a:active, div.menu ul.menu a:active {
-	text-decoration:underline;
+
 	}
 	
 .top-nav ul.menu li.current_page_item a, .top-nav ul.menu li.current_page_item a:visited, 
@@ -200,12 +202,20 @@ div.menu .menu li li li.sfhover ul {
 	background-image:url(../images/arrow_child.gif) !important;
 	}
 	
+.kings-nav {
+  width: 800px;
+  float: left;
+}
+	
 .kings-nav ul li {
   list-style: none;
   display: inline;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
+  background: url(../images/kingsnavbg.png) no-repeat left 4px;
+  padding: 0 0 0 10px;
+  margin: 0 5px 0 0; 
 }
 
 .kings-nav ul li a {

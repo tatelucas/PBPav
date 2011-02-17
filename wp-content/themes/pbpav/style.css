@@ -136,6 +136,26 @@ blockquote {
   float: left;
 }	
 
+.fbicon {
+  display: block;
+  background: url(images/social.png) no-repeat;
+  height: 24px;
+  width: 24px;
+  text-indent: -9999px;
+  float: right;
+  margin: -2px 0 0 0;
+}
+
+.twittericon {
+  display: block;
+  background: url(images/social.png) no-repeat -24px 0;
+  height: 24px;
+  width: 24px;
+  text-indent: -9999px;
+  float: right;
+  margin: -2px 5px 0 10px;
+}
+
 #content {
 	width:565px;
 	float:left
@@ -514,7 +534,7 @@ a.rsswidget, a.rsswidget:visited {
 	vertical-align:top;
 	background: #666666;
 	font-size: 12px;
-	color: #000;
+	color: #000 !important;
 	font-weight: bold;
 	padding: 8px 7px 7px 7px;
 	border: none;	
@@ -561,3 +581,33 @@ a.rsswidget, a.rsswidget:visited {
 	margin-right:5px;
 	}
 		
+		
+/* ---------- @ Event Headline Slider -----------*/		
+
+#eventheadslider {
+  width: 956px;
+  height: 94px;
+  margin: 10px 0;
+  float: left;
+}
+
+.eventhead {
+  margin: 0 12px 0 0;
+  float: left;
+  position: relative;
+}
+
+.eventhead h3 {
+  position: absolute;
+  bottom: 0;
+  width: 224px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 5px 0;
+  background: url(images/eventheadh3bg.png);
+}
+
+.eventhead h3 a {
+  color: #fff;
+}

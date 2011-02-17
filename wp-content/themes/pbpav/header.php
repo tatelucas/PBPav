@@ -40,6 +40,9 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
   
   <div class="kingsnavcont">
     <?php wp_nav_menu( array( 'container_class' => 'kings-nav', 'theme_location' => 'kings' ) ); ?>
+    <a href="http://www.twitter.com" class="twittericon">Twitter</a>    
+    <a href="http://www.facebook.com" class="fbicon">Facebook</a>
+
   </div><!--/kingsnavcont-->
   
   <div class="topnavcont">
@@ -54,7 +57,33 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
     </div><!--/searchform-->
 
   </div>
-    
+   
+  <div id="eventheadslider">
+    <div class="eventhead">
+      <a href="#">
+        <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+      </a>
+      <h3><a href="#">Jaime Foxx - Jan 21</a></h3>
+    </div>
+    <div class="eventhead">
+      <a href="#">
+        <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+      </a>
+      <h3><a href="#">Jaime Foxx - Jan 21</a></h3>
+    </div>
+    <div class="eventhead">
+      <a href="#">
+        <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+      </a>
+      <h3><a href="#">Jaime Foxx - Jan 21</a></h3>      
+    </div>
+    <div class="eventhead">
+      <a href="#">
+        <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+      </a>
+      <h3><a href="#">Jaime Foxx - Jan 21</a></h3>      
+    </div>        
+  </div>  
 
 </div><!--/masthead-->
 
