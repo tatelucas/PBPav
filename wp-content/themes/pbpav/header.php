@@ -19,6 +19,8 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/jcarousel.css" />
+
 <script type="text/javascript" src="http://use.typekit.com/nmd4bln.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
@@ -58,31 +60,69 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
 
   </div>
    
-  <div id="eventheadslider">
-    <div class="eventhead">
-      <a href="#">
-        <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
-      </a>
-      <h3><a href="#">Jaime Foxx - Jan 21</a></h3>
-    </div>
-    <div class="eventhead">
-      <a href="#">
-        <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
-      </a>
-      <h3><a href="#">Jaime Foxx - Jan 21</a></h3>
-    </div>
-    <div class="eventhead">
-      <a href="#">
-        <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
-      </a>
-      <h3><a href="#">Jaime Foxx - Jan 21</a></h3>      
-    </div>
-    <div class="eventhead">
-      <a href="#">
-        <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
-      </a>
-      <h3><a href="#">Jaime Foxx - Jan 21</a></h3>      
-    </div>        
+  <div id="eventheadslider" class="jcarousel-skin-tango">
+    <ul id="mycarousel" class="jcarousel-skin-tango">
+      <li class="eventhead">
+          <a href="#">
+            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+          </a>
+          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
+      </li>
+      <li class="eventhead">
+          <a href="#">
+            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+          </a>
+          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
+      </li>
+      <li class="eventhead ">
+          <a href="#">
+            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+          </a>
+          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
+      </li>
+      <li class="eventhead ">
+          <a href="#">
+            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+          </a>
+          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
+      </li>
+      <li class="eventhead ">
+          <a href="#">
+            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+          </a>
+          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
+      </li> 
+      <li class="eventhead ">
+          <a href="#">
+            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+          </a>
+          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
+      </li>
+      <li class="eventhead ">
+          <a href="#">
+            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+          </a>
+          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
+      </li>
+      <li class="eventhead ">
+          <a href="#">
+            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+          </a>
+          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
+      </li>
+      <li class="eventhead ">
+          <a href="#">
+            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+          </a>
+          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
+      </li>
+      <li class="eventhead ">
+          <a href="#">
+            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
+          </a>
+          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
+      </li>                  
+    </ul>  
   </div>  
 
 </div><!--/masthead-->

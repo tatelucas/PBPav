@@ -495,7 +495,7 @@ a.rsswidget, a.rsswidget:visited {
 
 .searchform {
 	float:left;
-	width:270px;
+	width:267px;
 	text-align:right;
 	padding: 11px 0 0 0;
 	}
@@ -595,6 +595,9 @@ a.rsswidget, a.rsswidget:visited {
   margin: 0 12px 0 0;
   float: left;
   position: relative;
+  display: block;
+  list-style: none;
+  padding: 0;
 }
 
 .eventhead h3 {
@@ -610,4 +613,33 @@ a.rsswidget, a.rsswidget:visited {
 
 .eventhead h3 a {
   color: #fff;
+}
+
+.prevhevent {
+  
+}
+
+.nexthevent {
+
+}
+
+.eventheadarrows {
+  background: url(images/eventheadarrows.png) no-repeat;
+  width: 17px;
+  height: 86px;
+  float: left;
+  overflow: hidden;
+  margin: 0 0 0 7px;
+}
+
+.eventheadarrows a {
+  display: block;
+  text-indent: -9999px;
+  width: 17px;
+  height: 40px;
+  margin: 0 0 6px 0;
+}
+
+.last {
+  margin-right: 0px !important;
 }

@@ -35,6 +35,7 @@
 <script type="text/javascript"> 
     jQuery(document).ready(function(){ 
         jQuery("ul.menu").superfish(); 
+        jQuery('#mycarousel').jcarousel();
     }); 
 </script>
 
@@ -49,6 +50,8 @@
                 jQuery('.kings-nav li').first().css('padding', '2px');
                 jQuery('.top-nav li').last().css('background', 'none'); 
                 jQuery('.top-nav li').first().css('padding', '0px');
+                jQuery('#eventheadslider .eventhead').last().css('margin:', '0px');                 
+                
         </script>
         
 </body>
