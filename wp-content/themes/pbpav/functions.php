@@ -96,10 +96,13 @@ function my_more_link( $more_link, $more_link_text ) {
 // This enqueues the necessary javascript
 
 function nav_animation() {
+	
 	wp_enqueue_script('jcarousel', '/wp-content/themes/pbpav/js/jquery.jcarousel.min.js', array('jquery'), '1.2.6'); 
 	wp_enqueue_script('superfish', '/wp-content/themes/pbpav/js/superfish.js', array('jquery'), '1.2.6'); 
-	  wp_enqueue_script('hoverintent', '/wp-content/themes/pbpav/js/hoverIntent.js', array('jquery'), '1.2.6');
-	  if ( is_singular() ) wp_enqueue_script('comment-reply');
+  wp_enqueue_script('hoverintent', '/wp-content/themes/pbpav/js/hoverIntent.js', array('jquery'), '1.2.6');
+	wp_enqueue_script('jquery-ui', '/wp-content/themes/pbpav/js/jquery-ui-1.8.6.custom.min.js', array('jquery'), '11.8.6'); 
+
+  if ( is_singular() ) wp_enqueue_script('comment-reply');
 	};
 
 

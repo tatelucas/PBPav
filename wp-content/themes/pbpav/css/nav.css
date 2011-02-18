@@ -21,7 +21,7 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: -3px;
-  padding: 0 0 0 7px;
+  padding: 0 0 0 6px;
   margin: 0;  
   height: 39px;
   background: url(../images/topnavbg.gif) no-repeat right 5px;
@@ -59,11 +59,13 @@ div.menu ul.menu a, div.menu ul.menu a:visited {
 	display: block;
 	text-decoration: none;
 	color:#fff;
-	padding:0 15px 0 0;
+	margin:0 10px 0 0;
+	padding: 0 4px 0 3px;
 	}
 
 .top-nav ul.menu a:hover, div.menu ul.menu a:hover {
-	color:#FFF;
+	color:#000;
+	background: #dfdfdf;
 	}
 
 .top-nav ul.menu a:active, div.menu ul.menu a:active {

@@ -20,6 +20,7 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/jcarousel.css" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/jquery-ui.css" />
 
 <script type="text/javascript" src="http://use.typekit.com/nmd4bln.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -115,13 +116,7 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
             <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
           </a>
           <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
-      </li>
-      <li class="eventhead ">
-          <a href="#">
-            <img src="<?php bloginfo('template_url'); ?>/images/headevent-example.jpg" />
-          </a>
-          <h3><a href="#">Jaime Foxx - Jan 21</a></h3>         
-      </li>                  
+      </li>              
     </ul>  
   </div>  
 
