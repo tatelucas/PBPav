@@ -45,7 +45,7 @@ body,html {
 body {
 	background:#616161;
 	color: #111;
-	padding: 0 0 20px 0;
+	padding: 0;
 	}
 
 body, select, input, textarea {
@@ -214,15 +214,6 @@ h2.posttitle, h1.posttitle {
 	font-size: 2.2em;
 	}
 
-#sidebar h3 {
-	border-bottom:3px solid #CCC;
-	padding-bottom:5px;
-	margin:22px 0 10px;
-	color:#939393;
-	font:normal .85em "news-gothic-std-1", sans-serif;
-	letter-spacing:.08em;
-	text-transform:uppercase
-	}
 
 .entry h3 {
 	font:1.6em "news-gothic-std-1", sans-serif;
@@ -364,9 +355,9 @@ a #icon-rss {
 /*Sidebar and Widgets*/
 
 .widget {
-	margin-bottom:20px;
+	margin-bottom:10px;
 	overflow:hidden;
-	background: #fff;
+	background: transparent;
 	}
 	
 .widget li {
@@ -558,11 +549,22 @@ a.rsswidget, a.rsswidget:visited {
 #footer {
 	font-size:.8em;
 	overflow:hidden;
-	width:900px;
-	margin:0 auto;
+	width:955px;
+	margin:0 auto 0 auto;
 	color:#dadada;
-	padding: 18px 0;
+	background: url(images/footerbg.png) repeat-x;
+	height: 240px;
+	padding: 0 10px;
+	position: relative;
 	}
+
+.footerlogo {
+  height: 200px;
+  width: 143px;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
 
 #footer a:hover, #footer a:active {
 	color:#FFF;
@@ -573,10 +575,11 @@ a.rsswidget, a.rsswidget:visited {
 	width:50%;
 	}
 
-#footer.right {
+#footer .right {
 	float:right;
 	width:50%;
-	text-align: right
+	text-align: right;
+	display: none;
 	}
 	
 #footer #icon-rss {
@@ -818,4 +821,79 @@ a.rsswidget, a.rsswidget:visited {
 
 .eventbuy {
   background: #2e980a;
+}
+
+.moreevents {
+  background: #000;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-size: 25px;
+  float: right;
+  display: block;
+  padding: 4px 10px 4px 70px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 20px 0 0 0;
+  letter-spacing: -2px;
+}
+
+.moreevents:hover {
+  background: #1c1c1c;
+}
+
+.connectwidget {
+  padding: 10px;
+}
+
+.connectwidget p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.downarrow {
+  padding: 0 0 0 20px;
+  background: url(images/downarrow.gif) no-repeat 0 3px;
+}
+
+.connectwidget {
+  background: #fff;
+}
+
+.connectwidget h3 {
+  background: #000 !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  font-size: 25px !important;
+  display: block !important;
+  padding: 0 0 0px 10px !important;
+  width: 170px !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  margin: 0 0 0 0 !important;
+  border: none !important;
+  letter-spacing: -2px !important;
+}
+
+.sociallinks a {
+  text-indent: -9999px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: red;
+}
+
+.sociallinks li {
+  display: block !important;
+  border: none !important;
+  float: left;
+  width: 24px;
+  margin: 0 10px 0 0;
+}
+
+.fblink {
+  background: url(images/sociallarge.png) no-repeat;
+}
+
+.twtr-widget h3 {
+  border: none !important;
 }

@@ -77,6 +77,10 @@ Template Name: Homepage
           <div class="clear"></div>
         </div><!--/homeevent-->        
     
+        <a href="#" class="moreevents">More</a>
+    
+        <div class="clear"></div>
+    
     	</div><!--/tabs-1-->
     	
     	
