@@ -19,7 +19,15 @@
 //  Archive Pagination
 //  Numeric Pagination
 
-
+$content_types = array(
+    'event',
+);
+foreach ($content_types as $type) {
+    $file = TEMPLATEPATH.'/includes/content_types/'.$type.'.php';
+    if (is_file($file)) {
+        require_once $file; 
+    }
+}
 
 /* Localization Initialize ********************************************/
 // This sets the basename of the theme for localization. 
