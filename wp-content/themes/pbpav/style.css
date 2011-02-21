@@ -830,7 +830,7 @@ a.rsswidget, a.rsswidget:visited {
   font-size: 25px;
   float: right;
   display: block;
-  padding: 4px 10px 4px 70px;
+  padding: 4px 10px 4px 100px;
   font-weight: bold;
   text-decoration: none;
   margin: 20px 0 0 0;
@@ -879,7 +879,10 @@ a.rsswidget, a.rsswidget:visited {
   display: block;
   width: 24px;
   height: 24px;
-  background: red;
+}
+
+.sociallinks {
+  margin: 0 0 0 40px;
 }
 
 .sociallinks li {
@@ -887,7 +890,7 @@ a.rsswidget, a.rsswidget:visited {
   border: none !important;
   float: left;
   width: 24px;
-  margin: 0 10px 0 0;
+  margin: 5px 10px 0 0;
 }
 
 .fblink {
@@ -896,4 +899,28 @@ a.rsswidget, a.rsswidget:visited {
 
 .twtr-widget h3 {
   border: none !important;
+}
+
+.fblink {
+  background: url(images/sociallarge.png) no-repeat 0 0;
+}
+
+.twitterlink {
+  background: url(images/sociallarge.png) no-repeat -24px 0;
+}
+
+.applelink {
+  background: url(images/sociallarge.png) no-repeat -48px 0;
+}
+
+.kclink {
+  background: url(images/sociallarge.png) no-repeat -72px 0;
+}
+
+.flickrlink {
+  background: url(images/sociallarge.png) no-repeat -96px 0;
+}
+
+.youtubelink {
+  background: url(images/sociallarge.png) no-repeat -120px 0;
 }
