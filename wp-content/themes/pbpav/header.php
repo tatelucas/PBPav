@@ -22,7 +22,7 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/jcarousel.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/jquery-ui.css" />
 
-<script type="text/javascript" src="http://use.typekit.com/nmd4bln.js"></script>
+<script type="text/javascript" src="http://use.typekit.com/pfu1ygk.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <?php nav_animation(); ?>
