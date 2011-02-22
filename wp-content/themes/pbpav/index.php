@@ -3,7 +3,7 @@
 <div id="content">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   
-  <?php include (TEMPLATEPATH . '/includes/loop.php'); ?>
+  <?php include (TEMPLATEPATH . '/includes/newsloop.php'); ?>
   <?php endwhile; ?>
   <?php numeric_pagination(); ?>
   

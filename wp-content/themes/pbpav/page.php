@@ -6,7 +6,7 @@
 		
 				 <?php include (TEMPLATEPATH . '/includes/loop.php'); ?>
 
-        <?php comments_template(); ?>
+        <?php //comments_template(); ?>
         
 		<?php endwhile; else: ?>
 

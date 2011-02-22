@@ -35,7 +35,7 @@ function events() {
     	'public' => true,
     	'show_ui' => true,
     	'capability_type' => 'post',
-		'menu_position' => 5,
+		   'menu_position' => 5,
     	'hierarchical' => false,
     	'rewrite' => true,
     	'supports' => array('title', 'editor', 'thumbnail')
@@ -93,7 +93,7 @@ function save_timedate() {
     global $post;
 
     if ($_REQUEST['action'] != 'autosave') {
-        update_post_meta($post->ID, "datetime", date("YmdHi00", strtotime($_POST["datetime"]) ) );
+        update_post_meta($post->ID, "datetime", date(strtotime($_POST["datetime"]) ) );
         update_post_meta($post->ID, "infolink", $_REQUEST['infolink'] );
         update_post_meta($post->ID, "buylink", $_REQUEST['buylink'] );
     }
@@ -105,7 +105,7 @@ function event_meta_options() {
 	if (!preg_match("/post-new/", $_SERVER['REQUEST_URI'], $matches) && isset($post->ID)) {
         // We're editing a post
 		$datetime = get_post_meta($post->ID, 'datetime', true);
-		$d = date("m/d/Y g:i A", strtotime($datetime));
+		$d = date("m/d/Y g:i A", $datetime);
 		$infolink = get_post_meta($post->ID,'infolink',true);
 	}
 	

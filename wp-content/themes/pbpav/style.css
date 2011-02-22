@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 	
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }	
 
@@ -768,6 +768,11 @@ a.rsswidget, a.rsswidget:visited {
   margin: 0 17px 0 0;
 }
 
+.homeevent p {
+  padding: 0;
+  margin: 0;
+}
+
 .clear {
   clear: both;
 }
@@ -923,4 +928,24 @@ a.rsswidget, a.rsswidget:visited {
 
 .youtubelink {
   background: url(images/sociallarge.png) no-repeat -120px 0;
+}
+
+.page #content {
+  background: #fff;
+}
+
+.page #content .page {
+  padding: 10px;
+}
+
+.home #content {
+  background: transparent;
+  width: 655px;
+  padding: 0px 0 20px 0 !important;
+}
+
+#content {
+  background: #fff;
+  width: 635px;
+  padding: 10px !important;
 }

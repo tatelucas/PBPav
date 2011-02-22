@@ -74,8 +74,10 @@ div.menu ul.menu a, div.menu ul.menu a:visited {
 	
 .top-nav ul.menu li.current_page_item a, .top-nav ul.menu li.current_page_item a:visited, 
 div.menu ul.menu li.current_page_item a, div.menu ul.menu li.current_page_item a:visited {
+	/*
 	background:#FFF;
 	color:#292928;
+	*/
 	}
 
 

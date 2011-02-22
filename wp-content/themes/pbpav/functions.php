@@ -19,6 +19,11 @@
 //  Archive Pagination
 //  Numeric Pagination
 
+function new_excerpt_length($length) {
+	return 25;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+
 $content_types = array(
     'event',
 );

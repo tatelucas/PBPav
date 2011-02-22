@@ -23,61 +23,25 @@ Template Name: Homepage
     	</ul>
     	<div id="tabs-1">
     
-        <div class="homeevent">
-          <a href="#">
-            <img src="<?php bloginfo('template_url'); ?>/images/eventexample.jpg" />
-          </a>
-          <div class="eventdetails">
-            <h4><a href="#">Jaime Foxx</a></h4>
-            <p class="eventdate">Thursday January 21, 2011</p>
-            <p class="eventexcerpt">
-            Check out Jaime Foxx on his brand-new world-wide tour starting this month at Power Balance Pavilion!
-            </p>
-          </div>
-          <div class="eventlinks">
-            <a href="#" class="eventmore">More Info</a>
-            <a href="#" class="eventbuy">Buy Now</a> 
-          </div>
-          <div class="clear"></div>
-        </div><!--/homeevent-->
-
-        <div class="homeevent">
-          <a href="#">
-            <img src="<?php bloginfo('template_url'); ?>/images/eventexample.jpg" />
-          </a>
-          <div class="eventdetails">
-            <h4><a href="#">Jaime Foxx</a></h4>
-            <p class="eventdate">Thursday January 21, 2011</p>
-            <p class="eventexcerpt">
-            Check out Jaime Foxx on his brand-new world-wide tour starting this month at Power Balance Pavilion!
-            </p>
-          </div>
-          <div class="eventlinks">
-            <a href="#" class="eventmore">More Info</a>
-            <a href="#" class="eventbuy">Buy Now</a> 
-          </div>
-          <div class="clear"></div>
-        </div><!--/homeevent-->
+        <?php
+        $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        query_posts("post_type=event&showposts=6&paged=$page");
+        ?>
         
-        <div class="homeevent">
-          <a href="#">
-            <img src="<?php bloginfo('template_url'); ?>/images/eventexample.jpg" />
-          </a>
-          <div class="eventdetails">
-            <h4><a href="#">Jaime Foxx</a></h4>
-            <p class="eventdate">Thursday January 21, 2011</p>
-            <p class="eventexcerpt">
-            Check out Jaime Foxx on his brand-new world-wide tour starting this month at Power Balance Pavilion!
-            </p>
-          </div>
-          <div class="eventlinks">
-            <a href="#" class="eventmore">More Info</a>
-            <a href="#" class="eventbuy">Buy Now</a> 
-          </div>
-          <div class="clear"></div>
-        </div><!--/homeevent-->        
+        	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+          <?php include (TEMPLATEPATH . '/includes/eventloop.php'); ?>
+        	<?php endwhile; ?>
+        
+        		  <?php numeric_pagination(); ?>
+        
+        
+        	<?php else : ?>
+        	
+        	<p><?php _e('Not Found','gravy'); ?></p>
+        
+        	<?php endif; ?>
     
-        <a href="#" class="moreevents">More</a>
+        <a href="/events/" class="moreevents">More</a>
     
         <div class="clear"></div>
     
@@ -85,37 +49,52 @@ Template Name: Homepage
     	
     	
     	<div id="tabs-2">
-    
+    	
+        <div class="homenewscont">
         <?php
-        $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        query_posts("showposts=6&paged=$page");
+        query_posts("showposts=6");
         ?>
-        
-        	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        		
-        		<h2 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-        		<p class="postmetadata"><em><?php _e('by','gravy'); ?></em> <?php the_author_posts_link('namefl'); ?> <em><?php _e('on','gravy'); ?></em> <?php the_time('M d, Y'); ?> 
-             <span class="commentcount">(<?php comments_popup_link('0', '1', '%'); ?>) <?php _e('Comments','gravy'); ?></span>
-        </p>
-      
-      
-      		<div class="entry">
-      		<?php the_content(); ?>
-      		</div>
-      		</div>
+
+        	<?php 
+        	  if (have_posts()) : while (have_posts()) : the_post(); 
+            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );             	
+        	?>
+            
+            <div class="homeevent">        		
+        		  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+              <a href="<?php the_permalink(); ?>">
+                <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=95&w=152px&zc=1" alt="" />
+              </a>
+              <div class="eventdetails">
+            		<h4 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h4>     
+                <div class="eventexcerpt">
+              		<div class="entry">
+              		<?php the_excerpt(); ?>
+              		</div><!--/entry-->
+              	</div><!--/eventexcerpt-->	
+            	</div><!--/eventdetails-->	
+            	<div class="eventlinks">
+                <a href="<?php the_permalink(); ?>" class="eventmore">More Info</a>
+              </div><!--/eventlinks-->
+        		</div><!--/post-->
+        		<div class="clear"></div>
+        	</div><!--/homeevent-->	
+      	
       	<?php endwhile; ?>
       
-      		  <?php numeric_pagination(); ?>
-      
-      
-      	<?php else : ?>
+        <?php //numeric_pagination(); ?>
       	
+      	<?php else : ?>
       	<p><?php _e('Not Found','gravy'); ?></p>
-      
       	<?php endif; ?>
+
+    
+        <a href="/news/" class="moreevents">More</a>
+    
+        <div class="clear"></div>
     
     
+        </div><!--/homenews-->
     	</div><!--/tabs-2-->
     	<div id="tabs-3">
     		<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
