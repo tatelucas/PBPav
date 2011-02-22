@@ -9,9 +9,77 @@ Template Name: Homepage
 <div id="content">
 
   <div class="homepageslidercont">
-    <!-- Slider goes here -->
-    
+    <div class="postslider">
+    <?php
+    // Load 7 latest posts in the 'Featured' category
+    $featured_posts = get_posts(array(
+      'numberposts' => 7,
+      'category_name' => 'featured'
+    ));
+
+    if ($featured_posts) {
+      echo '<ul>';
+      $post_count = 0;
+      foreach ($featured_posts as $post) {
+        setup_postdata($post);
+        ++$post_count;
+
+        if (has_post_thumbnail()) {
+          echo "<li id=\"post_count-{$post_count}\">";
+          the_post_thumbnail('featured');
+          echo "</li>";
+        }
+      }
+      echo '</ul>';
+    }
+    ?>
+    </div>
+
+      <div class="content">
+        <?php 
+        if ($featured_posts) {
+          $post_count = 0;
+          foreach ($featured_posts as $post) {
+            setup_postdata($post);
+            ++$post_count;
+
+            echo "<div id=\"post_count-{$post_count}_div\">";
+            ?>
+            <h2><?php the_title() ?></h2>
+            <p><?php the_excerpt() ?></p>
+            <?php
+            echo "</div>";
+          }
+        }
+        ?>
+      </div>
+
+    <div class="vertical">
+    <?php
+    if ($featured_posts) {
+      $post_count = 0;
+      foreach ($featured_posts as $post) {
+        setup_postdata($post);
+        ++$post_count;
+        ?>
+        <a href="" id="<?php echo "post_count-{$post_count}"; ?>">
+          <?php
+          if (has_post_thumbnail()) {
+            the_post_thumbnail('small-thumbnail');
+          }
+          ?>
+        </a>
+        <?php
+      }
+    }
+    ?>
+    </div>
+
+    <div style="clear:both"></div>
   </div><!--/homepageslidercont-->
+  <script type="text/javascript">
+    jQuery('.homepageslidercont .postslider ul').cycle({timeout:8000,fx:'scrollDown',speed:500,pager:'.homepageslidercont .vertical',pagerEvent:'click mouseenter mouseleave',pauseOnPagerHover:1,enableCustom:true,imageParentId:'.homepageslidercont',imageParentIdHover:true,before:marqueeBeforeShow,prefix:'marquee',delay:0});
+  </script>
 
   <div class="homepagecontent">
 

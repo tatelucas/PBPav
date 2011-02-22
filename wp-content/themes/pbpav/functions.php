@@ -81,6 +81,18 @@ add_theme_support( 'automatic-feed-links' );
 
 /* Post Thumbs ********************************************/
 add_theme_support( 'post-thumbnails' );
+/*
+Post thumbnail settings
+
+There are some predefined sizes registered
+below. But, it is suggested that you define
+any thumbnail dimensions you need for your
+theme.
+*/
+set_post_thumbnail_size(252, 252, true); // Normal post thumbnails (loop)
+add_image_size('featured', 561, 401, true);
+add_image_size('medium-thumbnail', 170, 170, true);
+add_image_size('small-thumbnail', 70, 53, true);
 
 
 /* SEO Stuff ********************************************/
@@ -112,11 +124,12 @@ function nav_animation() {
 	
 	wp_enqueue_script('jcarousel', '/wp-content/themes/pbpav/js/jquery.jcarousel.min.js', array('jquery'), '1.2.6'); 
 	wp_enqueue_script('superfish', '/wp-content/themes/pbpav/js/superfish.js', array('jquery'), '1.2.6'); 
-  wp_enqueue_script('hoverintent', '/wp-content/themes/pbpav/js/hoverIntent.js', array('jquery'), '1.2.6');
+    wp_enqueue_script('hoverintent', '/wp-content/themes/pbpav/js/hoverIntent.js', array('jquery'), '1.2.6');
+    wp_enqueue_script('cycle', '/wp-content/themes/pbpav/js/jquery.cycle.js', array('jquery'), '1.2.6');
 	wp_enqueue_script('jquery-ui', '/wp-content/themes/pbpav/js/jquery-ui-1.8.6.custom.min.js', array('jquery'), '11.8.6'); 
 
-  if ( is_singular() ) wp_enqueue_script('comment-reply');
-	};
+    if ( is_singular() ) wp_enqueue_script('comment-reply');
+}
 
 
 /* wp_page_menu Filter ********************************************/

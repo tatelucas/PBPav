@@ -43,26 +43,26 @@ function events() {
 
 	register_post_type('event', $args);
 	
-    // Event Categories
+    // Event Types
 	$labels_categories = array(
-		'name' => _x( 'Categories', 'taxonomy general name' ),
-		'singular_name' => _x( 'Category', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Categories' ),
-		'all_items' => __( 'All Categories' ),
-		'parent_item' => __( 'Parent Category' ),
-		'parent_item_colon' => __( 'Parent Category:' ),
-		'edit_item' => __( 'Edit Category' ), 
-		'update_item' => __( 'Update Category' ),
-		'add_new_item' => __( 'Add New Category' ),
-		'new_item_name' => __( 'New Category Name' ),
+		'name' => _x( 'Types', 'taxonomy general name' ),
+		'singular_name' => _x( 'Type', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search Types' ),
+		'all_items' => __( 'All Types' ),
+		'parent_item' => __( 'Parent Type' ),
+		'parent_item_colon' => __( 'Parent Type:' ),
+		'edit_item' => __( 'Edit Type' ), 
+		'update_item' => __( 'Update Type' ),
+		'add_new_item' => __( 'Add New Type' ),
+		'new_item_name' => __( 'New Type Name' ),
 	);
 
-	register_taxonomy('category', array('event'), array(
+	register_taxonomy('type', array('event'), array(
 		'hierarchical' => true,
 		'labels' => $labels_categories,
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => array( 'slug' => 'category' ),
+		'rewrite' => array( 'slug' => 'type' ),
 	));
 
 	$labels_location = array(

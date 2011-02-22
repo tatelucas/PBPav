@@ -645,11 +645,52 @@ a.rsswidget, a.rsswidget:visited {
 /* ---------- @ Homepage Content -----------*/		
 
 .homepageslidercont {
-  height: 400px;
   background: #000;
   color: #fff;
   border: 10px solid white;
   margin: 0 0 10px 0;
+  position:relative;
+}
+
+.homepageslidercont > .postslider {
+    overflow: hidden;
+    float: left;
+    position: relative;
+    width: 545px !important;
+    height: 401px !important;
+}
+
+.homepageslidercont > .postslider img {
+    max-width:100%;
+}
+
+.homepageslidercont > .vertical {
+    width: 70px;
+    position: relative;
+    float:right;
+    overflow:hidden;
+}
+
+.homepageslidercont .content {
+    background: transparent url(images/text-bg.png);
+    min-height: 0px;
+    position: absolute;
+    bottom: 0px;
+    float: left;
+}
+
+.homepageslidercont .content > div {
+    display:none;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:545px;
+    z-index: 25 !important;
+    padding: 10px;
+    min-height: 20px;
+    background: transparent url(images/text-bg.png);    
+    text-align: left;
+    color: #E5E5E5;
 }
 
 .homepagecontent {
