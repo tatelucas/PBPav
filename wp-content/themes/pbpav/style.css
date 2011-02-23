@@ -211,7 +211,9 @@ h2 {
 	
 h2.posttitle, h1.posttitle {
 	margin:0;
-	font-size: 2.2em;
+	font-size: 42px;
+	letter-spacing: -3px;
+	text-transform: uppercase;
 	}
 
 
@@ -889,6 +891,7 @@ a.rsswidget, a.rsswidget:visited {
 
 .connectwidget {
   padding: 10px;
+  width: 281px;
 }
 
 .connectwidget p {
@@ -989,4 +992,52 @@ a.rsswidget, a.rsswidget:visited {
   background: #fff;
   width: 635px;
   padding: 10px !important;
+}
+
+.page-template-custom-page-allaccess-php .post {
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 20px 0;
+}
+
+.widget_categoryposts {
+  background: #fff;
+  padding: 10px;
+}
+
+.widget_categoryposts h3 {
+  background: #000;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-size: 25px;
+  display: block;
+  float: left;
+  padding: 4px 100px 4px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 0 10px 0;
+  letter-spacing: -2px;
+  clear: both;
+}
+
+.widget_categoryposts img {
+  float: left;
+}
+
+.sidepromodet {
+  float: left;
+  width: 160px;
+  margin: 0 0 0 10px;
+}
+
+.sidepromodet p {
+  margin: 0;
+  padding: 0;
+}
+
+.sidepromodet .post-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin: 0 0 5px 0;
 }

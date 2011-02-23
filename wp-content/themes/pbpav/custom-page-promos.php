@@ -1,6 +1,22 @@
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		
+<?php
+/*
+Template Name: Promos
+*/
+?>
+
+<?php get_header(); ?>
+
+<div id="content">
+
+
+<?php
+$page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+query_posts("showposts=6&cat=7&paged=$page");
+?>
+
+
         	<?php 
+        	  if (have_posts()) : while (have_posts()) : the_post(); 
             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );             	
         	?>
             
@@ -11,14 +27,6 @@
               </a>
               <div class="eventdetails">
             		<h4 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h4>     
-                <p class="eventdate">
-                <?php 
-                $eventtime = get_post_meta($post->ID, 'datetime'); 
-                $buylink = get_post_meta($post->ID, 'infolink');
-                echo date('l F d, Y, g:ia', $eventtime[0]); 
-                
-                ?>
-                </p>
                 <div class="eventexcerpt">
               		<div class="entry">
               		<?php the_excerpt(); ?>
@@ -27,11 +35,24 @@
             	</div><!--/eventdetails-->	
             	<div class="eventlinks">
                 <a href="<?php the_permalink(); ?>" class="eventmore">More Info</a>
-                <a href="<?php echo $buylink[0]; ?>" class="eventbuy">Buy Now</a>                 
               </div><!--/eventlinks-->
         		</div><!--/post-->
         		<div class="clear"></div>
-        	</div><!--/homeevent-->	  
+        	</div><!--/homeevent-->	
+      	
+      	<?php endwhile; ?>
+
+		  <?php numeric_pagination(); ?>
 
 
-		</div>
+	<?php else : ?>
+	
+	<p><?php _e('Not Found','gravy'); ?></p>
+
+	<?php endif; ?>
+
+</div><!--/content-->
+
+<?php get_sidebar(); ?>
+
+<?php get_footer(); ?>

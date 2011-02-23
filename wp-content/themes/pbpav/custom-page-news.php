@@ -11,7 +11,7 @@ Template Name: News
 
 <?php
 $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-query_posts("showposts=6&paged=$page");
+query_posts("showposts=6&cat=8&paged=$page");
 ?>
 
 

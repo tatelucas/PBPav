@@ -95,7 +95,7 @@ function save_timedate() {
     if ($_REQUEST['action'] != 'autosave') {
         update_post_meta($post->ID, "datetime", date(strtotime($_POST["datetime"]) ) );
         update_post_meta($post->ID, "infolink", $_REQUEST['infolink'] );
-        update_post_meta($post->ID, "buylink", $_REQUEST['buylink'] );
+        //update_post_meta($post->ID, "buylink", $_REQUEST['buylink'] );
     }
 }
 
@@ -124,14 +124,16 @@ function event_meta_options() {
 
 	    <div class="clear"></div>
 <?php
-	echo '<label for="infolink">' .__("More Information URL:") . "</label>";
+	echo '<label for="infolink">' .__("Buy Now URL:") . "</label>";
 ?>
        	<input id="infolink" name="infolink" class="infolink" value="<?php echo $infolink; ?>" />
 <?php
+	/*
 	echo '<label for="buylink">' .__("Buy Now URL:") . "</label>";
 ?>
        	<input id="buylink" name="buylink" class="buylink" value="<?php echo $buylink; ?>" />
 <?php
+  */
 }
 
 // Load dependencies

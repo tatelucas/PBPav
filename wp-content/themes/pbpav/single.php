@@ -7,11 +7,19 @@
 	<?php 
       // excludes this post from 'Related posts' in the sidebar
       $GLOBALS['current_id'] = $post->ID; 
-      ?>
+	    $posttype = get_post_type($post->ID);
+	    ?>
 	 
-		 <?php include (TEMPLATEPATH . '/includes/loop.php'); ?>
+		 <?php 
+		 if ($posttype == 'event') {
+		   include (TEMPLATEPATH . '/includes/singleevent.php'); 
+		 } else {
+		   include (TEMPLATEPATH . '/includes/loop.php'); 		 
+       comments_template();
+		 }  
+		 ?>
 
-	<?php comments_template(); ?>
+
 
 	<?php endwhile; else: ?>
 
