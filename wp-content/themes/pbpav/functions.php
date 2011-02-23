@@ -24,6 +24,7 @@ function new_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 
+
 $content_types = array(
     'event',
 );

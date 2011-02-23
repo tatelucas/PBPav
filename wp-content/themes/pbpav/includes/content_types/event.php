@@ -56,7 +56,7 @@ function events() {
 		'add_new_item' => __( 'Add New Type' ),
 		'new_item_name' => __( 'New Type Name' ),
 	);
-
+  /*
 	register_taxonomy('type', array('event'), array(
 		'hierarchical' => true,
 		'labels' => $labels_categories,
@@ -64,6 +64,7 @@ function events() {
 		'query_var' => true,
 		'rewrite' => array( 'slug' => 'type' ),
 	));
+	*/
 
 	$labels_location = array(
 		'name' => _x( 'Locations', 'taxonomy general name' ),
