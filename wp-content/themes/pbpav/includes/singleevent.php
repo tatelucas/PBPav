@@ -3,76 +3,59 @@
   <?php
 	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
   $eventtime = get_post_meta($post->ID, 'datetime');         
+  $buylink = get_post_meta($post->ID, 'infolink');
   
   if ($image[0]) {
   ?>
-  
-  <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=399&w=634px&zc=1" alt="" />
-  
+    <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=399&w=634px&zc=1" alt="" />
   <?php
   }
   ?>
 
- 
-  <?php if (is_single() || is_page()) { 
-  // This links the page- or post-title where necessary, and otherwise displays as plain text  
-  ?>
+ <a class="singleeventbynow" href="<?php echo $buylink[0]; ?>">Buy Now</a>
+
  <h1 class="posttitle"><?php the_title(); ?></h1>
-  <?php } elseif (is_search()) { ?>
- 
-   <h2 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php search_title_highlight(); ?></a></h2>
-	
-    <?php } else { ?>
-    
- <h2 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
-<?php } ?>
-
-<?php if (!is_page()) { 
-  // This inserts metadata everywhere except on Pages  
-  ?>
-<p class="postmetadata"><em><?php _e('by','gravy'); ?></em> <?php the_author_posts_link('namefl'); ?> <em><?php _e('on','gravy'); ?></em> <?php the_time('M d, Y'); ?> 
-    <?php if (!is_single()) { ?> <span class="commentcount">(<?php comments_popup_link('0', '1', '%'); ?>) <?php _e('Comments','gravy'); ?></span><?php } ?>
-</p>
-<?php } ?>
+ <p class="singleeventdate"><?php echo date('l F d, g:ia', $eventtime[0]); ?></p>
 
 
 <div class="entry">
-<?php if (is_archive()) { 
-// This displays an excerpt or the entire post, depending on the context
-?>
 
-	<?php the_excerpt(); ?>
+  <div class="badgecont">
+  <div class="facebook-like-box">
+    <h5>Share This Event</h5>
+    <div class="fbbox">
+      <iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo the_permalink(); ?>&amp;layout=standard&amp;show_faces=false&amp;width=200&amp;action=like&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:35px;" allowTransparency="true"></iframe>
+    </div><!--/fbbox-->
+  </div><!--/facebook-like-box-->
+  <div class="badges">
+<span class="st_twitter_vcount" displayText="Tweet"></span><span class="st_facebook_vcount" displayText="Share"></span><span class="st_email_vcount" displayText="Email"></span>
+  </div><!--/badges-->
+  </div><!--/badgecont-->
 
-   </div><!--/end entry-->
-</div><!--/end post-->
-
-<?php } elseif (is_search()) { ?>
-
-   <?php search_excerpt_highlight(); ?>
-    
-     </div><!--/end entry-->
-</div><!--/end post-->
-
-<?php } else { ?>
 	<?php the_content(); ?>
+	
+	<div class="eventmeta">
+	  <p>
+	  <strong>When:</strong>
+	  <br />
+	  <?php echo date('l F d, Y g:ia', $eventtime[0]); ?>
+	  </p>
+	  <p>
+	  <strong>Where:</strong>
+	  <br />
+	  <?php 
+	  $terms = get_the_terms($post->ID, 'location'); 
+	  if ($terms) {
+	    foreach ($terms as $location) {
+	      echo $location->name;
+	    }
+	  }
+	  ?>
+	  </p>
+	</div>
     
-	<?php wp_link_pages(array(
-				'before' => '<p class="nextpage"><strong> '.__('Pages:','gravy').' </strong>', 
-				'after' => '</p>', 
-				'next_or_number' => 'number')); 
-				?>
-
- <?php if (is_single()) 
- // This adds Tags and 'Edit' link to single-post pages
- { ?>
- 
- <p id="tags"><?php the_tags('<span><strong>'.__('Tagged as:','gravy').'</strong> ', ', ', '</span>'); ?></p>
- <?php  } ?>
- 
 <?php edit_post_link(__('Edit this entry','gravy'), '<p id="wp-edit">', ' &rsaquo;</p>'); ?>
 
  </div><!--/end entry-->
 </div><!--/end post-->
-
-<?php } ?>

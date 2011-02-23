@@ -128,7 +128,9 @@ function nav_animation() {
     wp_enqueue_script('hoverintent', '/wp-content/themes/pbpav/js/hoverIntent.js', array('jquery'), '1.2.6');
     wp_enqueue_script('cycle', '/wp-content/themes/pbpav/js/jquery.cycle.js', array('jquery'), '1.2.6');
 	wp_enqueue_script('jquery-ui', '/wp-content/themes/pbpav/js/jquery-ui-1.8.6.custom.min.js', array('jquery'), '11.8.6'); 
-
+	wp_enqueue_script('pbpav', '/wp-content/themes/pbpav/js/pbpav.js', array('jquery'), '1.0', true); 
+	
+	
     if ( is_singular() ) wp_enqueue_script('comment-reply');
 }
 

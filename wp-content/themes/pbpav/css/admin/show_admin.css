@@ -33,3 +33,7 @@ div.AnyTime-win {
 #event-info input#infolink, #event-info input#buylink {
 	background-image:url("../../images/admin/ico_link.png")
 }
+
+#event-info .plaintext {
+  background: none;
+}

@@ -10,9 +10,6 @@
 </div>
 <!--/wrapper-->
 
-
-
-
 <div id="footer">
 
 <div class="footerlogo">
@@ -31,6 +28,14 @@
 </div>
 <!--/footer-->
 
+<!-- Dropdown menu content is here -->
+<div class="hiddendropdownmenu" id="hiddendropdownmenu-26">
+Lorem<br />
+Lorem<br />
+<p>Testing</p>
+</div>
+
+
 <script type="text/javascript"> 
     jQuery(document).ready(function(){ 
         jQuery("ul.menu").superfish(); 
@@ -39,21 +44,5 @@
     }); 
 </script>
 
-<script type="text/javascript">
-                jQuery("li.cat-item a").each(function(){ // Remove Titles from wp_list_categories
-                    jQuery(this).removeAttr('title');
-                })                
-                jQuery("li.page_item a").each(function(){ // Remove Titles from wp_list_pages
-                    jQuery(this).removeAttr('title');
-                })
-                jQuery('.kings-nav li').first().css('background', 'none');                
-                jQuery('.kings-nav li').first().css('padding', '2px');
-                jQuery('.top-nav li').last().css('background', 'none'); 
-                jQuery('.top-nav li').first().css('padding', '0px');
-                jQuery('#eventheadslider li').last().css('margin-right:', '0px');                   
-                            
-                
-        </script>
-        
 </body>
 </html>

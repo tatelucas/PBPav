@@ -28,6 +28,8 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
 <?php nav_animation(); ?>
 <?php wp_head(); ?>
 
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'2ba9d27c-e8a1-4a67-a4de-7032a0c9f339'});</script>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -70,13 +72,13 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
     	if (have_posts()) : while (have_posts()) : the_post(); 
     	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
       $eventtime = get_post_meta($post->ID, 'datetime'); 
-       
+      $shorttitle = get_post_meta($post->ID, 'shorttitle'); 
     	?>
       <li class="eventhead">
           <a href="<?php the_permalink(); ?>">
             <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=94&w=224px&zc=1" alt="" />
           </a>
-          <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?> - <?php echo date('M d', $eventtime[0]); ?></a></h3>         
+          <h3><a href="<?php the_permalink(); ?>"><?php echo $shorttitle[0] ?></a></h3>         
       </li>
     	<?php endwhile; ?>      
       <?php endif; ?>      

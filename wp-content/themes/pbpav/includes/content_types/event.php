@@ -117,6 +117,7 @@ function save_timedate() {
     if ($_REQUEST['action'] != 'autosave') {
         update_post_meta($post->ID, "datetime", date(strtotime($_POST["datetime"]) ) );
         update_post_meta($post->ID, "infolink", $_REQUEST['infolink'] );
+        update_post_meta($post->ID, "shorttitle", $_REQUEST['shorttitle'] );
         //update_post_meta($post->ID, "buylink", $_REQUEST['buylink'] );
     }
 }
@@ -129,6 +130,7 @@ function event_meta_options() {
 		$datetime = get_post_meta($post->ID, 'datetime', true);
 		$d = date("m/d/Y g:i A", $datetime);
 		$infolink = get_post_meta($post->ID,'infolink',true);
+		$shorttitle = get_post_meta($post->ID,'shorttitle',true);
 	}
 	
 	echo '<label for="datetime">' .__("Date / Time:") . "</label>";
@@ -149,6 +151,11 @@ function event_meta_options() {
 	echo '<label for="infolink">' .__("Buy Now URL:") . "</label>";
 ?>
        	<input id="infolink" name="infolink" class="infolink" value="<?php echo $infolink; ?>" />
+
+<?php
+	echo '<label for="shorttitle">' .__("Short Title for Header:") . "</label>";
+?>
+       	<input id="shorttitle" name="shorttitle" class="plaintext" value="<?php echo $shorttitle; ?>" />
 <?php
 	/*
 	echo '<label for="buylink">' .__("Buy Now URL:") . "</label>";

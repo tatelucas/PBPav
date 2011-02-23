@@ -50,7 +50,6 @@
 .top-nav ul.menu li, div.menu ul.menu li {
 	float: left;
 	margin-right: 0;
-	position:relative;
 	list-style:none
 	}
 	
@@ -185,10 +184,6 @@ div.menu .menu li li li.sfhover ul {
 	margin:-29px 0 0 178px !important
 	}
 
-.top-nav .menu a.sf-with-ul, div.menu .menu a.sf-with-ul {
-	padding-right: 30px;
-	min-width: 1px; /* trigger IE7 hasLayout so spans position accurately */
-}
 
 .top-nav .menu li .sf-sub-indicator, div.menu .menu li .sf-sub-indicator {
 	position: absolute;
@@ -229,4 +224,29 @@ div.menu .menu li li li.sfhover ul {
 		
 .kings-nav ul li a:hover {
   color: #e1e1e1;
+}
+
+.dropdownmenu {
+  visibility: hidden;
+  z-index: 10000;
+  position: absolute;
+  left: 0;
+  width: 945px;
+  font-size: 12px !important;
+  border: 5px solid #262626;
+  border-top: 0;
+  background-color: #DFDFDF !important;
+  padding: 12px 10px 10px 10px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-weight: normal !important;
 }		
+
+.dropdownmenu ul li {
+  
+}
+
+.hiddendropdownmenu {
+  visibility: hidden;
+  display: none;
+}
