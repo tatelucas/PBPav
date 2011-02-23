@@ -86,6 +86,27 @@ function events() {
 		'query_var' => true,
 		'rewrite' => array( 'slug' => 'location' ),
 	));
+	
+	$labels_sitelocation = array(
+		'name' => _x( 'Site Locations', 'taxonomy general name' ),
+		'singular_name' => _x( 'Site Locations', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search Site Locations' ),
+		'all_items' => __( 'All Site Locations' ),
+		'parent_item' => __( 'Parent Site Locations' ),
+		'parent_item_colon' => __( 'Parent Site Location:' ),
+		'edit_item' => __( 'Edit Site Location' ), 
+		'update_item' => __( 'Update Site Location' ),
+		'add_new_item' => __( 'Add New Site Location' ),
+		'new_item_name' => __( 'New Site Location Name' ),
+	);
+
+	register_taxonomy('sitelocation',array('event','post'), array(
+		'hierarchical' => true,
+		'labels' => $labels_sitelocation,
+		'show_ui' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'sitelocation' ),
+	));	
 }
 
 add_action('save_post', 'save_timedate');

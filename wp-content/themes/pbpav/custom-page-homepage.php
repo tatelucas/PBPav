@@ -14,7 +14,8 @@ Template Name: Homepage
     // Load 7 latest posts in the 'Featured' category
     $featured_posts = get_posts(array(
       'numberposts' => 7,
-      'category_name' => 'billboard'
+      'sitelocation' => 'billboard',
+      'post_type' => array('post','event')
     ));
 
     if ($featured_posts) {

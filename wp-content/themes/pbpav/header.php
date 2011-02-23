@@ -64,7 +64,7 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
   <div id="eventheadslider" class="jcarousel-skin-tango">
     <ul id="mycarousel" class="jcarousel-skin-tango">
       <?php
-      query_posts("post_type=event&showposts=12&category_name=featured");
+      query_posts("post_type=event&showposts=12&sitelocation=featured");
       ?>
     	<?php 
     	if (have_posts()) : while (have_posts()) : the_post(); 
