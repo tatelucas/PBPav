@@ -61,6 +61,16 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
       </form>
     </div><!--/searchform-->
 
+    <div class="hiddengoogle">
+    <form method="get" action="http://www.google.com/search" id="googleform">
+    
+    <input type="text"   name="q" size="31" id="googleq"
+     maxlength="255" value="" />
+    <input type="submit" value="Google Search" />
+    <input type="radio"  name="sitesearch" value="" checked />
+    </form>
+    </div>
+
   </div>
    
   <div id="eventheadslider" class="jcarousel-skin-tango">

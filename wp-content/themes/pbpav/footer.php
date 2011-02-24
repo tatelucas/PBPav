@@ -28,14 +28,6 @@
 </div>
 <!--/footer-->
 
-<!-- Dropdown menu content is here -->
-<div class="hiddendropdownmenu" id="hiddendropdownmenu-26">
-Lorem<br />
-Lorem<br />
-<p>Testing</p>
-</div>
-
-
 <script type="text/javascript"> 
     jQuery(document).ready(function(){ 
         jQuery("ul.menu").superfish(); 

@@ -10,15 +10,21 @@ jQuery('.top-nav li').last().css('background', 'none');
 jQuery('.top-nav li').first().css('padding', '0px');
 jQuery('#eventheadslider li').last().css('margin-right:', '0px');           
 
-/*
-jQuery(document).ready(function(){ 
-
-  jQuery('#menu-item-26').hover(function(){
-    jQuery('.dropdown-26').css('display','block');
-  })  
+jQuery('.searchweb').click(function() {
+  var newsearchstring;
+  newsearchstring = jQuery('#searchfield').val();
+  jQuery('#googleq').val(function(index, value) {
+    return newsearchstring;
+  });
+  jQuery('#googleform').submit();
 });
-*/
 
+jQuery('#eventcat').change(function () {
+  jQuery('#searchcat').submit();
+  //alert('asdasd');
+});
+
+/*
 var timeout    = 500;
 var closetimer = 0;
 var ddmenuitem = 0;
@@ -42,13 +48,14 @@ function jsddm_canceltimer()
 
 jQuery(document).ready(function(){ 
 
-  jQuery('#menu-item-26').append('<div class="dropdown-26 dropdownmenu"></div>');
-  jQuery('.dropdown-26').html(function(){
+  jQuery('#menu-item-24').append('<div class="dropdown-24 dropdownmenu"></div>');
+  jQuery('.dropdown-24').html(function(){
     var newcontent;
-    newcontent = jQuery('#hiddendropdownmenu-26').html();
+    newcontent = jQuery('#hiddendropdownmenu-24').html();
     return newcontent;
   });
 
   jQuery('.top-nav li').bind('mouseover', jsddm_open)
   jQuery('.top-nav li').bind('mouseout',  jsddm_timer)
 });
+*/

@@ -49,7 +49,8 @@
 
 .top-nav ul.menu li, div.menu ul.menu li {
 	float: left;
-	margin-right: 0;
+	margin-right:0;
+	position:relative;
 	list-style:none
 	}
 	
@@ -92,7 +93,7 @@ div.menu ul.menu li.current_page_item a, div.menu ul.menu li.current_page_item a
 .top-nav ul.menu li.sfhover ul, 
 div.menu ul.menu li:hover ul,
 div.menu ul.menu li.sfhover ul {
-	left: 7px;
+	left: -5px;
 	}
 
 .top-nav ul.menu li:hover li ul,
@@ -126,19 +127,20 @@ div.menu ul.menu li li li.sfhover ul {
 
 .top-nav ul.menu li ul, div.menu ul.menu li ul {
 	position: absolute;
-	left: -999em;
+	left: -5px;
 	height: auto;
 	width: 178px;
 	z-index:1 !important;
 	line-height:1;
 	margin-left:11px;
-	background:url(../images/bg_nav.png);
+	background: #e1e1e1;
 	}
 
 .top-nav ul.menu li li, div.menu ul.menu li li {
 	width: 178px;
 	z-index:1000;
-	border-bottom:1px solid #848484;
+	border: none;
+	background: transparent !important;
 	}
 
 .top-nav .menu li li a, .top-nav .menu li li a:visited, 
@@ -147,9 +149,11 @@ div.menu ul.menu li li li.sfhover ul {
 div.menu .menu li li a, .top-nav .menu li li a:visited, 
 div.menu .menu li.current_page_parent li.current_page_item a, 
 div.menu .menu li.current_page_parent li.current_page_item a:visited {
-	color:#dadada !important;
-	padding:8px 12px !important;
+	color: #434343 !important;
+	padding:8px 5px !important;
 	background:transparent !important;
+	font-size: 16px !important;
+	letter-spacing: -1px !important;
 	}
 
 .top-nav .menu li li a:hover, .top-nav .menu li li a:active,
@@ -158,7 +162,7 @@ div.menu .menu li.current_page_parent li.current_page_item a:visited {
 div.menu .menu li li a:hover, .top-nav .menu li li a:active,
 div.menu .menu li.current_page_parent li.current_page_item a:hover, 
 div.menu .menu li.current_page_parent li.current_page_item a:active {
-	color:#FFF !important;
+	color:#000 !important;
 	}	
 		
 .top-nav .menu li:hover ul, 
@@ -173,7 +177,7 @@ div.menu .menu li li li:hover ul,
 div.menu .menu li.sfhover ul, 
 div.menuv .menu li li.sfhover ul, 
 div.menu .menu li li li.sfhover ul {
-	left: auto;
+
 	}
 
 .top-nav .menu ul ul, div.menu .menu ul ul {
@@ -190,16 +194,19 @@ div.menu .menu li li li.sfhover ul {
 	display: block;
 	right: 	.6em;
 	top: 	.8em; /* IE6 only */
-	width: 	16px;
-	height: 	10px;
+	width: 	1px;
+	height: 	1px;
 	text-indent: 	-999em;
 	overflow: hidden;
-	background: url(../images/arrow_nav.gif) no-repeat;
+	background: transparent;
 }
 
 .top-nav .menu li li .sf-sub-indicator, div.menu .menu li li .sf-sub-indicator {
 	background-image:url(../images/arrow_child.gif) !important;
 	}
+	
+	
+	
 	
 .kings-nav {
   width: 800px;
@@ -224,29 +231,4 @@ div.menu .menu li li li.sfhover ul {
 		
 .kings-nav ul li a:hover {
   color: #e1e1e1;
-}
-
-.dropdownmenu {
-  visibility: hidden;
-  z-index: 10000;
-  position: absolute;
-  left: 0;
-  width: 945px;
-  font-size: 12px !important;
-  border: 5px solid #262626;
-  border-top: 0;
-  background-color: #DFDFDF !important;
-  padding: 12px 10px 10px 10px !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
-  font-weight: normal !important;
-}		
-
-.dropdownmenu ul li {
-  
-}
-
-.hiddendropdownmenu {
-  visibility: hidden;
-  display: none;
 }

@@ -8,10 +8,50 @@ Template Name: Events
 
 <div id="content">
 
+<h1 class="posttitle">Events</h1>
+
+<p class="eventsearch">View Events By: </p>
+<div class="eventformsearc">
+<?php 
+
+$catargs = array(
+  'hide_empty' => 0
+);
+
+$terms = get_terms( 'eventcat', $catargs );
+if ($terms) {
+  //var_dump($terms);
+  echo '<form action="/events/" method="get" name="searchcat" id="searchcat">';
+  echo '<select name="eventcat" id="eventcat">';
+  echo '<option value="0">All Categories</option>';
+  foreach ($terms as $cat) {
+    $checked = null;
+    if ($_REQUEST['eventcat'] == $cat->term_id) {
+      $checked = ' selected';
+    }
+    echo '<option value="' . $cat->term_id . '"' . $checked . '>' . $cat->name . '</a>';
+  }
+  echo '</select>';
+  echo '</form>';
+}
+?>
+</div>
+<div class="clear"></div>
+
 
 <?php
 $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-query_posts("post_type=event&showposts=6&paged=$page");
+
+if ($_REQUEST['eventcat']) {
+  
+  $curterm = get_term($_REQUEST['eventcat'],'eventcat' );
+  if ($curterm) {
+    $curtermparameter = 'eventcat=' . $curterm->slug;
+    //echo $curtermparameter;
+  }
+}
+
+query_posts("post_type=event&showposts=6&paged=$page&$curtermparameter");
 ?>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

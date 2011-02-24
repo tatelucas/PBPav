@@ -547,6 +547,10 @@ a.rsswidget, a.rsswidget:visited {
   color: #000;
 }
 
+.hiddengoogle {
+  display: none;
+}
+
 /* ---------- @ Footer -----------*/
 
 #footer {
@@ -1146,4 +1150,18 @@ a.rsswidget, a.rsswidget:visited {
 
 .badges .st_twitter_vcount, .st_facebook_vcount, .st_email_vcount {
   margin: 0 5px 0 0;
+}
+
+.eventsearch {
+  width: 100px;
+  float: left;
+  padding: 0;
+  margin: 15px 0 0 0;
+  font-weight: bold;
+}
+
+.eventformsearc {
+  width: 300px;
+  float: left;
+  margin: 15px 0 0 0;
 }

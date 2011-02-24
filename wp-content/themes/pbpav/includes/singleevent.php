@@ -4,7 +4,12 @@
 	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
   $eventtime = get_post_meta($post->ID, 'datetime');         
   $buylink = get_post_meta($post->ID, 'infolink');
+  $pricing = get_post_meta($post->ID, 'pricing');
+  $parking = get_post_meta($post->ID, 'parking');
+  $doorsopen = get_post_meta($post->ID, 'doorsopen');
+  $promoter = get_post_meta($post->ID, 'promoter');
   
+        
   if ($image[0]) {
   ?>
     <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=399&w=634px&zc=1" alt="" />
@@ -41,18 +46,42 @@
 	  <br />
 	  <?php echo date('l F d, Y g:ia', $eventtime[0]); ?>
 	  </p>
-	  <p>
-	  <strong>Where:</strong>
-	  <br />
+
 	  <?php 
 	  $terms = get_the_terms($post->ID, 'location'); 
 	  if ($terms) {
 	    foreach ($terms as $location) {
+        ?>
+    	  <p>
+    	  <strong>Where:</strong>
+    	  <br />        
+        <?php
 	      echo $location->name;
+        ?>
+	      </p>        
+        <?php
 	    }
 	  }
+	  
+	  if ($pricing[0]) {
+	    echo '<p><strong>Ticket Information (Pricing)</strong><br />' . $pricing[0] . '</p>';
+	  }
+
+	  if ($parking[0]) {
+	    echo '<p><strong>Parking Info (Time and costs)</strong><br />' . $parking[0] . '</p>';
+	  }
+
+	  if ($doorsopen[0]) {
+	    echo '<p><strong>Doors Open</strong><br />' . $doorsopen[0] . '</p>';
+	  }
+
+	  if ($promoter[0]) {
+	    echo '<p><strong>Promoter</strong><br />' . $promoter[0] . '</p>';
+	  }
+
+	  
 	  ?>
-	  </p>
+
 	</div>
     
 <?php edit_post_link(__('Edit this entry','gravy'), '<p id="wp-edit">', ' &rsaquo;</p>'); ?>
