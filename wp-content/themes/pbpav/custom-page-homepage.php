@@ -101,7 +101,7 @@ Template Name: Homepage
           <?php include (TEMPLATEPATH . '/includes/eventloop.php'); ?>
         	<?php endwhile; ?>
         
-        		  <?php numeric_pagination(); ?>
+        		  <?php //numeric_pagination(); ?>
         
         
         	<?php else : ?>

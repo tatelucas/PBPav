@@ -107,6 +107,28 @@ function events() {
 		'query_var' => true,
 		'rewrite' => array( 'slug' => 'sitelocation' ),
 	));	
+	
+	$labels_eventcat = array(
+		'name' => _x( 'Event Categories', 'taxonomy general name' ),
+		'singular_name' => _x( 'Event Categories', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search Event Categories' ),
+		'all_items' => __( 'All Event Categories' ),
+		'parent_item' => __( 'Parent Event Categories' ),
+		'parent_item_colon' => __( 'Parent Event Category:' ),
+		'edit_item' => __( 'Edit Event Category' ), 
+		'update_item' => __( 'Update Event Category' ),
+		'add_new_item' => __( 'Add New Event Category' ),
+		'new_item_name' => __( 'New Event Category Name' ),
+	);
+
+	register_taxonomy('eventcat',array('event'), array(
+		'hierarchical' => true,
+		'labels' => $labels_eventcat,
+		'show_ui' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'eventcat' ),
+	));		
+	
 }
 
 add_action('save_post', 'save_timedate');
@@ -118,7 +140,10 @@ function save_timedate() {
         update_post_meta($post->ID, "datetime", date(strtotime($_POST["datetime"]) ) );
         update_post_meta($post->ID, "infolink", $_REQUEST['infolink'] );
         update_post_meta($post->ID, "shorttitle", $_REQUEST['shorttitle'] );
-        //update_post_meta($post->ID, "buylink", $_REQUEST['buylink'] );
+        update_post_meta($post->ID, "pricing", $_REQUEST['pricing'] );
+        update_post_meta($post->ID, "parking", $_REQUEST['parking'] );        
+        update_post_meta($post->ID, "doorsopen", $_REQUEST['doorsopen'] );
+        update_post_meta($post->ID, "promoter", $_REQUEST['promoter'] );
     }
 }
 
@@ -131,6 +156,10 @@ function event_meta_options() {
 		$d = date("m/d/Y g:i A", $datetime);
 		$infolink = get_post_meta($post->ID,'infolink',true);
 		$shorttitle = get_post_meta($post->ID,'shorttitle',true);
+		$pricing = get_post_meta($post->ID,'pricing',true);
+		$parking = get_post_meta($post->ID,'parking',true);
+		$doorsopen = get_post_meta($post->ID,'doorsopen',true);
+		$promoter = get_post_meta($post->ID,'promoter',true);								
 	}
 	
 	echo '<label for="datetime">' .__("Date / Time:") . "</label>";
@@ -157,12 +186,23 @@ function event_meta_options() {
 ?>
        	<input id="shorttitle" name="shorttitle" class="plaintext" value="<?php echo $shorttitle; ?>" />
 <?php
-	/*
-	echo '<label for="buylink">' .__("Buy Now URL:") . "</label>";
+	echo '<label for="pricing">' .__("Ticket Information (Pricing):") . "</label>";
 ?>
-       	<input id="buylink" name="buylink" class="buylink" value="<?php echo $buylink; ?>" />
+       	<input id="pricing" name="pricing" class="plaintext" value="<?php echo $pricing; ?>" />
 <?php
-  */
+	echo '<label for="parking">' .__("Parking Info (Time and costs):") . "</label>";
+?>
+       	<input id="parking" name="parking" class="plaintext" value="<?php echo $parking; ?>" />
+<?php
+	echo '<label for="doorsopen">' .__("Doors Open:") . "</label>";
+?>
+       	<input id="doorsopen" name="doorsopen" class="plaintext" value="<?php echo $doorsopen; ?>" />
+<?php
+	echo '<label for="promoter">' .__("Promoter:") . "</label>";
+?>
+       	<input id="promoter" name="promoter" class="plaintext" value="<?php echo $promoter; ?>" />       	       	
+<?php
+
 }
 
 // Load dependencies
