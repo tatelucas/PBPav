@@ -45,8 +45,8 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
   
   <div class="kingsnavcont">
     <?php wp_nav_menu( array( 'container_class' => 'kings-nav', 'theme_location' => 'kings' ) ); ?>
-    <a href="http://www.twitter.com" class="twittericon">Twitter</a>    
-    <a href="http://www.facebook.com" class="fbicon">Facebook</a>
+    <a href="http://www.twitter.com/pbpav" target="_blank" class="twittericon">Twitter</a>    
+    <a href="http://www.facebook.com/powerbalancepavilion" target="_blank" class="fbicon">Facebook</a>
 
   </div><!--/kingsnavcont-->
   

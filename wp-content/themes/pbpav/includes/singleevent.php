@@ -12,12 +12,14 @@
         
   if ($image[0]) {
   ?>
-    <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=399&w=634px&zc=1" alt="" />
+  <div class="eventtopimg">
+  <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=399&w=634px&zc=1" alt="" />
+  </div>
   <?php
   }
   ?>
 
- <a class="singleeventbynow" href="<?php echo $buylink[0]; ?>">Buy Now</a>
+ <a class="singleeventbynow" href="<?php echo $buylink[0]; ?>" target="_blank">Buy Now</a>
 
  <h1 class="posttitle"><?php the_title(); ?></h1>
 

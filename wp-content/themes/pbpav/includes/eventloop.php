@@ -27,7 +27,7 @@
             	</div><!--/eventdetails-->	
             	<div class="eventlinks">
                 <a href="<?php the_permalink(); ?>" class="eventmore">More Info</a>
-                <a href="<?php echo $buylink[0]; ?>" class="eventbuy">Buy Now</a>                 
+                <a href="<?php echo $buylink[0]; ?>" target="_blank" class="eventbuy">Buy Now</a>                 
               </div><!--/eventlinks-->
         		</div><!--/post-->
         		<div class="clear"></div>

@@ -25,12 +25,17 @@ Template Name: Homepage
         setup_postdata($post);
         ++$post_count;
 
+            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );  
+
         if (has_post_thumbnail()) {
           echo "<li id=\"post_count-{$post_count}\">";
           ?>
           <a href="<?php the_permalink() ?>" title="Permalink to <?php the_title() ?>" rel="bookmark">
           <?php
-          the_post_thumbnail('featured');
+          //the_post_thumbnail('featured');
+          ?>
+          <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=400&w=560px&zc=1" alt="" />
+          <?php
           echo "</a></li>";
         }
       }
