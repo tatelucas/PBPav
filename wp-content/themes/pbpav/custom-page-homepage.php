@@ -27,8 +27,11 @@ Template Name: Homepage
 
         if (has_post_thumbnail()) {
           echo "<li id=\"post_count-{$post_count}\">";
+          ?>
+          <a href="<?php the_permalink() ?>" title="Permalink to <?php the_title() ?>" rel="bookmark">
+          <?php
           the_post_thumbnail('featured');
-          echo "</li>";
+          echo "</a></li>";
         }
       }
       echo '</ul>';
@@ -38,6 +41,7 @@ Template Name: Homepage
 
       <div class="content">
         <?php 
+        // Content
         if ($featured_posts) {
           $post_count = 0;
           foreach ($featured_posts as $post) {
@@ -46,8 +50,8 @@ Template Name: Homepage
 
             echo "<div id=\"post_count-{$post_count}_div\">";
             ?>
-            <h2><?php the_title() ?></h2>
-            <p><?php the_excerpt() ?></p>
+            <h2><a href="<?php the_permalink() ?>" title="Permalink to <?php the_title() ?>" rel="bookmark"><?php the_title() ?></a></h2>
+            <?php the_excerpt() ?>
             <?php
             echo "</div>";
           }
@@ -58,12 +62,14 @@ Template Name: Homepage
     <div class="vertical">
     <?php
     if ($featured_posts) {
+      // Thumbnails
       $post_count = 0;
       foreach ($featured_posts as $post) {
         setup_postdata($post);
         ++$post_count;
         ?>
         <a href="" id="<?php echo "post_count-{$post_count}"; ?>">
+          <span class="thumbnail-arrow"></span>
           <?php
           if (has_post_thumbnail()) {
             the_post_thumbnail('small-thumbnail');

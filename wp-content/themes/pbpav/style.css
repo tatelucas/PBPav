@@ -648,7 +648,7 @@ a.rsswidget, a.rsswidget:visited {
 /* ---------- @ Homepage Content -----------*/		
 
 .homepageslidercont {
-  background: #000;
+  background: #fff;
   color: #fff;
   border: 10px solid white;
   margin: 0 0 10px 0;
@@ -659,7 +659,7 @@ a.rsswidget, a.rsswidget:visited {
     overflow: hidden;
     float: left;
     position: relative;
-    width: 545px !important;
+    width: 540px !important;
     height: 401px !important;
 }
 
@@ -687,13 +687,28 @@ a.rsswidget, a.rsswidget:visited {
     position:absolute;
     bottom:0;
     left:0;
-    width:545px;
+    width:520px;
     z-index: 25 !important;
     padding: 10px;
     min-height: 20px;
     background: transparent url(images/text-bg.png);    
     text-align: left;
     color: #E5E5E5;
+}
+
+.homepageslidercont .content h2, .homepageslidercont .content p {
+    margin:0 !important;
+}
+
+.homepageslidercont .content h2 > a {
+    color:#fff;
+}
+
+.homepageslidercont a.activeSlide > .thumbnail-arrow {
+    background: transparent url(images/thumbnail-arrow.gif) no-repeat;
+    width: 70px;
+    height: 53px;
+    position: absolute;
 }
 
 .homepagecontent {
