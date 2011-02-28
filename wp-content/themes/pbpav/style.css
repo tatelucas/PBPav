@@ -512,7 +512,7 @@ a.rsswidget, a.rsswidget:visited {
 	
 #searchsubmit {
 	vertical-align:top;
-	background: #4698ca;
+	background: #F7319A;
 	font-size: 12px;
 	color: #fff;
 	font-weight: bold;
@@ -524,7 +524,7 @@ a.rsswidget, a.rsswidget:visited {
 	}		
 
 #searchsubmit:hover {
-  background: #7ec4ee;
+  background: #FFA2D2;
 }
 	
 .searchweb {
@@ -707,6 +707,17 @@ a.rsswidget, a.rsswidget:visited {
   height: 53px;
   float: left;
   margin: 0 0 5px 0;
+  filter:alpha(opacity=50);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}
+
+.activeSlide {
+        filter:alpha(opacity=100) !important;
+        -moz-opacity:1 !important;
+        -khtml-opacity: 1 !important;
+        opacity: 1 !important;
 }
 
 .homepageslidercont .content h2, .homepageslidercont .content p {
@@ -718,7 +729,10 @@ a.rsswidget, a.rsswidget:visited {
 }
 
 .homepageslidercont a.activeSlide > .thumbnail-arrow {
+    /*
     background: transparent url(images/thumbnail-arrow.gif) no-repeat;
+    */
+    background: transparent;
     width: 70px;
     height: 53px;
     position: absolute;
@@ -781,7 +795,7 @@ a.rsswidget, a.rsswidget:visited {
 
 .homepagecontent .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .homepagecontent .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .homepagecontent .ui-tabs .ui-tabs-nav li.ui-state-processing a { 
   cursor: text; 
-  color: #dfdfdf;
+  color: #000;
 }
 
 .homepagecontent .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
@@ -813,7 +827,7 @@ a.rsswidget, a.rsswidget:visited {
 
 .homepagecontent .ui-widget-header {
   border: none;
-  background: #000;
+  background: #ccc;
 }
 
 .homepagecontent .ui-widget-content {
@@ -938,8 +952,8 @@ a.rsswidget, a.rsswidget:visited {
 }
 
 .connectwidget h3 {
-  background: #000 !important;
-  color: #fff !important;
+  background: #CCC !important;
+  color: black !important;
   text-transform: uppercase !important;
   font-size: 25px !important;
   display: block !important;
@@ -949,7 +963,7 @@ a.rsswidget, a.rsswidget:visited {
   text-decoration: none !important;
   margin: 0 0 0 0 !important;
   border: none !important;
-  letter-spacing: -2px !important;
+  letter-spacing: -1px !important;
 }
 
 .sociallinks a {
@@ -1034,8 +1048,8 @@ a.rsswidget, a.rsswidget:visited {
 }
 
 .widget_categoryposts h3 {
-  background: #000;
-  color: #fff !important;
+  background: #ccc;
+  color: #000 !important;
   text-transform: uppercase;
   font-size: 25px;
   display: block;
