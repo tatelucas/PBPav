@@ -1,8 +1,5 @@
 </div>
 
-<div id="footer-widgets"><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Widgets') ) : ?><?php endif; ?></div>
-</div>
-
 <!--/main-->
 
 
@@ -33,7 +30,10 @@
         jQuery("ul.menu").superfish(); 
         jQuery('#mycarousel').jcarousel();
         jQuery("#tabs").tabs();
-    }); 
+    });
+    
+    
+     
 </script>
 
 </body>

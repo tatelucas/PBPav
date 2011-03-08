@@ -82,7 +82,7 @@ function widget($args, $instance) {
 				<?php //the_post_thumbnail( 'cat_post_thumb_size'.$this->id ); 
 				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
 				?>
-        <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=68&w=109px&zc=1" alt="" />
+        <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&amp;h=68&amp;w=109px&amp;zc=1" alt="" />
 				</a>
 			<?php endif; ?>
 

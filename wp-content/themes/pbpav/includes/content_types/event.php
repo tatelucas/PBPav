@@ -38,7 +38,7 @@ function events() {
 		   'menu_position' => 5,
     	'hierarchical' => false,
     	'rewrite' => true,
-    	'supports' => array('title', 'editor', 'thumbnail')
+    	'supports' => array('comments','title', 'editor', 'thumbnail')
     );
 
 	register_post_type('event', $args);
@@ -138,12 +138,14 @@ function save_timedate() {
 
     if ($_REQUEST['action'] != 'autosave') {
         update_post_meta($post->ID, "datetime", date(strtotime($_POST["datetime"]) ) );
+        update_post_meta($post->ID, "enddatetime", date(strtotime($_POST["enddatetime"]) ) );
         update_post_meta($post->ID, "infolink", $_REQUEST['infolink'] );
         update_post_meta($post->ID, "shorttitle", $_REQUEST['shorttitle'] );
         update_post_meta($post->ID, "pricing", $_REQUEST['pricing'] );
         update_post_meta($post->ID, "parking", $_REQUEST['parking'] );        
         update_post_meta($post->ID, "doorsopen", $_REQUEST['doorsopen'] );
         update_post_meta($post->ID, "promoter", $_REQUEST['promoter'] );
+        update_post_meta($post->ID, "showtimes", $_REQUEST['showtimes'] );
     }
 }
 
@@ -153,16 +155,26 @@ function event_meta_options() {
 	if (!preg_match("/post-new/", $_SERVER['REQUEST_URI'], $matches) && isset($post->ID)) {
         // We're editing a post
 		$datetime = get_post_meta($post->ID, 'datetime', true);
-		$d = date("m/d/Y g:i A", $datetime);
+
+    if ($datetime) {
+		$d = date("m/d/Y g:i A", $datetime);    
+    }
+    
+		$enddatetime = get_post_meta($post->ID, 'enddatetime', true);
+		if ($enddatetime) {
+		  $ed = date("m/d/Y g:i A", $enddatetime);
+    }
+    
 		$infolink = get_post_meta($post->ID,'infolink',true);
 		$shorttitle = get_post_meta($post->ID,'shorttitle',true);
 		$pricing = get_post_meta($post->ID,'pricing',true);
 		$parking = get_post_meta($post->ID,'parking',true);
 		$doorsopen = get_post_meta($post->ID,'doorsopen',true);
 		$promoter = get_post_meta($post->ID,'promoter',true);								
+		$showtimes = get_post_meta($post->ID,'showtimes',true);		
 	}
 	
-	echo '<label for="datetime">' .__("Date / Time:") . "</label>";
+	echo '<label for="datetime">' .__("Start Date / Time:") . "</label>";
 	?>	
        	<input id="datetime" name="datetime" class="datetime" value="<?php echo $d; ?>" />
         <script type="text/javascript">
@@ -177,6 +189,30 @@ function event_meta_options() {
 
 	    <div class="clear"></div>
 <?php
+	echo '<label for="enddatetime">' .__("End Date / Time:") . "</label>";
+	?>	
+       	<input id="enddatetime" name="enddatetime" class="enddatetime" value="<?php echo $ed; ?>" />
+        <script type="text/javascript">
+			jQuery("#enddatetime").AnyTime_picker({
+                hideInput : false,
+                placement : 'popup',
+                askSecond : false,
+                format	  : '%m/%d/%Y %l:%i %p',
+                baseYear  : <?php echo date('Y'); ?>
+            });
+        </script>
+        <script type="text/javascript">
+        jQuery(document).ready(function() {
+        jQuery("#textareaID").addClass("mceEditor");
+        if ( typeof( tinyMCE ) == "object" && typeof( tinyMCE.execCommand ) == "function" ) {
+        tinyMCE.execCommand("mceAddControl", false, "showtimes");
+        }
+        
+        });
+        </script>
+
+	    <div class="clear"></div>
+<?php
 	echo '<label for="infolink">' .__("Buy Now URL:") . "</label>";
 ?>
        	<input id="infolink" name="infolink" class="infolink" value="<?php echo $infolink; ?>" />
@@ -185,6 +221,10 @@ function event_meta_options() {
 	echo '<label for="shorttitle">' .__("Short Title for Header:") . "</label>";
 ?>
        	<input id="shorttitle" name="shorttitle" class="plaintext" value="<?php echo $shorttitle; ?>" />
+<?php
+	echo '<label for="showtimes">' .__("Showtimes:") . "</label>";
+?>
+       	<textarea id="showtimes" name="showtimes" class="plaintext" style="width: 400px; height: 120px;"><?php echo wpautop($showtimes); ?></textarea>
 <?php
 	echo '<label for="pricing">' .__("Ticket Information (Pricing):") . "</label>";
 ?>

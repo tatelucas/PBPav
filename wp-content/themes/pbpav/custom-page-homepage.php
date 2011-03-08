@@ -34,7 +34,7 @@ Template Name: Homepage
           <?php
           //the_post_thumbnail('featured');
           ?>
-          <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=400&w=560px&zc=1" alt="" />
+          <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&amp;h=400&amp;w=560px&amp;zc=1" alt="" />
           <?php
           echo "</a></li>";
         }
@@ -53,7 +53,7 @@ Template Name: Homepage
             setup_postdata($post);
             ++$post_count;
 
-            echo "<div id=\"post_count-{$post_count}_div\">";
+            echo "<div id=\"post_count-{$post_count}_div\" class=\"billboardtitle\">";
             ?>
             <h2><a href="<?php the_permalink() ?>" title="Permalink to <?php the_title() ?>" rel="bookmark"><?php the_title() ?></a></h2>
             <?php the_excerpt() ?>
@@ -73,7 +73,7 @@ Template Name: Homepage
         setup_postdata($post);
         ++$post_count;
         ?>
-        <a href="" id="<?php echo "post_count-{$post_count}"; ?>">
+        <a href="" id="<?php echo "link_post_count-{$post_count}"; ?>">
           <span class="thumbnail-arrow"></span>
           <?php
           if (has_post_thumbnail()) {
@@ -104,15 +104,16 @@ Template Name: Homepage
     	<div id="tabs-1">
     
         <?php
-        $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        query_posts("post_type=event&showposts=6&paged=$page");
+        $page = (get_query_var('page')) ? get_query_var('page') : 1;
+        //echo $page;
+        query_posts("post_type=event&showposts=10&paged=$page");
         ?>
         
         	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php include (TEMPLATEPATH . '/includes/eventloop.php'); ?>
         	<?php endwhile; ?>
         
-        		  <?php //numeric_pagination(); ?>
+        		  <?php numeric_pagination(); ?>
         
         
         	<?php else : ?>
@@ -121,7 +122,7 @@ Template Name: Homepage
         
         	<?php endif; ?>
     
-        <a href="/events/" class="moreevents">More</a>
+        <!--<a href="/events/" class="moreevents">More</a>-->
     
         <div class="clear"></div>
     
@@ -132,7 +133,7 @@ Template Name: Homepage
     	
         <div class="homenewscont">
         <?php
-        query_posts("showposts=6&cat=8");
+        query_posts("showposts=10&cat=8");
         ?>
 
         	<?php 
@@ -141,9 +142,9 @@ Template Name: Homepage
         	?>
             
             <div class="homeevent">        		
-        		  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        		  <div id="homenews-post-<?php the_ID(); ?>" <?php post_class(); ?>>
               <a href="<?php the_permalink(); ?>">
-                <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=95&w=152px&zc=1" alt="" />
+                <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&amp;h=105&amp;w=152px&amp;zc=1" alt="" />
               </a>
               <div class="eventdetails">
             		<h4 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h4>     
@@ -162,7 +163,7 @@ Template Name: Homepage
       	
       	<?php endwhile; ?>
       
-        <?php //numeric_pagination(); ?>
+        <?php numeric_pagination(); ?>
       	
       	<?php else : ?>
       	<p><?php _e('Not Found','gravy'); ?></p>
@@ -181,7 +182,7 @@ Template Name: Homepage
 
         <div class="homenewscont">
         <?php
-        query_posts("showposts=6&cat=7");
+        query_posts("showposts=10&cat=7");
         ?>
 
         	<?php 
@@ -190,9 +191,9 @@ Template Name: Homepage
         	?>
             
             <div class="homeevent">        		
-        		  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        		  <div id="homepromo-post-<?php the_ID(); ?>" <?php post_class(); ?>>
               <a href="<?php the_permalink(); ?>">
-                <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=95&w=152px&zc=1" alt="" />
+                <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&amp;h=105&amp;w=152px&amp;zc=1" alt="" />
               </a>
               <div class="eventdetails">
             		<h4 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h4>     

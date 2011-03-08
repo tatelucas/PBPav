@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: safecss 1.o\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-10 12:54-0500\n"
+"PO-Revision-Date: 2010-09-18 14:57-0500\n"
+"Last-Translator: Matt Rude <matt@mattrude.com>\n"
+"Language-Team: Matt Rude <matt@mattrude.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: random-image-block.php:20
+msgid "Random Image Widget"
+msgstr "Imagen al azar Widget"
+
+#: random-image-block.php:21
+msgid "Displays a random gallery image."
+msgstr "Muestra una galería de imágenes al azar."
+
+#: random-image-block.php:39
+msgid "Random Image"
+msgstr "Imagen al azar"
+
+#: random-image-block.php:90
+msgid "Album:"
+msgstr "Album:"
+
+#: random-image-block.php:125
+msgid "Widget Title"
+msgstr "Widget Título"
+
+#: random-image-block.php:128
+msgid "Center the Image?"
+msgstr "Centro de la Imagen?"
+
+#: random-image-block.php:130
+msgid ""
+"Select a Post Category to display images from, or All Categories to disable "
+"filtering"
+msgstr "Seleccione una categoría de puesto para mostrar imágenes de, o todas las categorías para desactivar el filtrado"
+
+#: random-image-block.php:131
+msgid "All Categories"
+msgstr "Todas las categorías"
+
+#: random-image-block.php:135
+msgid "Show Advanced Options"
+msgstr "Mostrar opciones avanzadas"
+
+#: random-image-block.php:153
+msgid "Album Options:"
+msgstr "Album Opciones:"
+
+#: random-image-block.php:155
+msgid "Link to the Album vs Image?"
+msgstr "Enlace al Álbum de imágenes vs?"
+
+#: random-image-block.php:158
+msgid "Display name of Album?"
+msgstr "Visualización del nombre del álbum?"
+
+#: random-image-block.php:160
+msgid "Meta Data to Display:"
+msgstr "Los metadatos para la exhibición:"
+
+#: random-image-block.php:162
+msgid "Show the Images Title?"
+msgstr "Mostrar el título de las imágenes?"
+
+#: random-image-block.php:165
+msgid "Show the Images Caption?"
+msgstr "Mostrar el título Imágenes?"
+
+#: random-image-block.php:168
+msgid "Show Images Description?"
+msgstr "Mostrar imágenes Descripción?"
+

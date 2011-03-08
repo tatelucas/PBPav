@@ -23,7 +23,7 @@ query_posts("showposts=6&cat=8&paged=$page");
             <div class="homeevent">        		
         		  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
               <a href="<?php the_permalink(); ?>">
-                <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=95&w=152px&zc=1" alt="" />
+                <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=105&w=152px&zc=1" alt="" />
               </a>
               <div class="eventdetails">
             		<h4 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h4>     

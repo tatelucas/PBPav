@@ -499,7 +499,9 @@ a.rsswidget, a.rsswidget:visited {
 
 #searchfield {
 	width:156px;
-	padding: 5px 11px 5px 24px;
+	padding: 0 11px 0 24px;
+	height: 30px;
+	line-height: 30px;
 	font-size: 15px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -516,11 +518,14 @@ a.rsswidget, a.rsswidget:visited {
 	font-size: 12px;
 	color: #fff;
 	font-weight: bold;
-	padding: 8px 9px 7px 9px;
+	padding: 0;
 	border: none;	
 	text-transform: uppercase;
 	margin: 0 0 0 1px;
 	float: left;
+	display: block;
+  height: 30px;
+  width: 31px;
 	}		
 
 #searchsubmit:hover {
@@ -533,13 +538,17 @@ a.rsswidget, a.rsswidget:visited {
 	font-size: 12px;
 	color: #000 !important;
 	font-weight: bold;
-	padding: 8px 7px 7px 7px;
+	padding: 0;
 	border: none;	
 	text-transform: uppercase;
 	margin: 0 0 0 1px; 
 	text-decoration: none;
   display: block;
   float: left;
+  height: 30px;
+  width: 35px;  
+  text-align: center;
+  line-height: 30px;
 }
 
 .searchweb:hover {
@@ -687,7 +696,7 @@ a.rsswidget, a.rsswidget:visited {
     float: left;
 }
 
-.homepageslidercont .content > div {
+.homepageslidercont .content div {
     display:none;
     position:absolute;
     bottom:0;
@@ -1086,7 +1095,7 @@ a.rsswidget, a.rsswidget:visited {
 }
 
 .singleeventbynow {
-  background: #000;
+  background: #2E980A;
   color: #fff !important;
   text-transform: uppercase;
   font-size: 25px;
@@ -1191,4 +1200,27 @@ a.rsswidget, a.rsswidget:visited {
 
 .eventtopimg {  
   text-align: center;
+}
+
+.billboardtitle a {
+  color: #fff !important;
+}
+
+.showtimes {
+  margin: 15px 0;
+}
+
+.showtimes p {
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  overflow: hidden;
+  border: none !important;
+}
+
+a img
+{
+  border:none;
 }

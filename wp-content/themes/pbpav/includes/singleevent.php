@@ -3,17 +3,18 @@
   <?php
 	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
   $eventtime = get_post_meta($post->ID, 'datetime');         
+  $endeventtime = get_post_meta($post->ID, 'enddatetime');      
   $buylink = get_post_meta($post->ID, 'infolink');
   $pricing = get_post_meta($post->ID, 'pricing');
   $parking = get_post_meta($post->ID, 'parking');
   $doorsopen = get_post_meta($post->ID, 'doorsopen');
   $promoter = get_post_meta($post->ID, 'promoter');
-  
+  $showtimes = get_post_meta($post->ID, 'showtimes');  
         
   if ($image[0]) {
   ?>
   <div class="eventtopimg">
-  <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&h=399&w=634px&zc=1" alt="" />
+  <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&amp;h=399&amp;w=634px&amp;zc=1" alt="" />
   </div>
   <?php
   }
@@ -23,7 +24,19 @@
 
  <h1 class="posttitle"><?php the_title(); ?></h1>
 
- <p class="singleeventdate"><?php echo date('l F d, g:ia', $eventtime[0]); ?></p>
+ <p class="singleeventdate">
+	  <?php
+	  if (strlen($endeventtime[0]) > 0) {
+	  ?>
+	  <?php echo date('l F d', $eventtime[0]); ?> - <?php echo date('l F d, Y', $endeventtime[0]); ?>
+	  <?php
+	  } else {
+	  ?>
+	  <?php echo date('l F d, Y g:ia', $eventtime[0]); ?>
+	  <?php
+	  } 
+	  ?>
+ </p>
 
 
 <div class="entry">
@@ -40,15 +53,23 @@
   </div><!--/badges-->
   </div><!--/badgecont-->
 
-	<?php the_content(); ?>
-	
 	<div class="eventmeta">
 	  <p>
 	  <strong>When:</strong>
 	  <br />
+	  <?php
+	  if (strlen($endeventtime[0]) > 0) {
+	  ?>
+	  <?php echo date('l F d', $eventtime[0]); ?> - <?php echo date('l F d, Y', $endeventtime[0]); ?>
+	  <?php
+	  } else {
+	  ?>
 	  <?php echo date('l F d, Y g:ia', $eventtime[0]); ?>
-	  </p>
-
+	  <?php
+	  }
+	  ?>
+	  </p>	 
+    
 	  <?php 
 	  $terms = get_the_terms($post->ID, 'location'); 
 	  if ($terms) {
@@ -63,6 +84,10 @@
 	      </p>        
         <?php
 	    }
+	  }
+	  
+	  if ($showtimes[0]) {
+	    echo '<div class="showtimes"><strong>Show Times</strong><br />' . wpautop($showtimes[0]) . '</div>';	  
 	  }
 	  
 	  if ($pricing[0]) {
@@ -85,6 +110,11 @@
 	  ?>
 
 	</div>
+
+	<?php the_content(); ?>
+	
+	<?php comments_template(); ?>
+	
     
 <?php edit_post_link(__('Edit this entry','gravy'), '<p id="wp-edit">', ' &rsaquo;</p>'); ?>
 

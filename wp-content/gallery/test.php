@@ -1,0 +1,1 @@
+<img src="/wp-content/gallery/backgrounds/rotate.php" alt="background" />
