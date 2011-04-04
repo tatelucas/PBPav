@@ -30,6 +30,13 @@
         jQuery("ul.menu").superfish(); 
         jQuery('#mycarousel').jcarousel();
         jQuery("#tabs").tabs();
+        /*
+        jQuery(".slidetitle").html(function() {
+          var newtext;
+          newtext = jQuery(".gholder .active .currentposttitle").html();
+          return newtext;
+        });
+        */
     });
     
     

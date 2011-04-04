@@ -14,12 +14,12 @@ require_once( dirname(__FILE__) . '/image-gallery-reloaded.php');
 ?>
 <style type="text/css" media="screen" rel="stylesheet">
 body {opacity .999;}
-.gbackgr {border: 5px solid #<?php echo $g_border_color; ?>;width:<?php echo $g_main_width; ?>px;background:#<?php echo $g_background_color; ?>;text-align:center;}
-.caption{color:#<?php echo $g_caption_color; ?>;display:block;font-style:italic;padding:0 8px 8px 0;float:left;}
-.gallery_reloaded {width:<?php echo $g_main_width; ?>px;margin:auto;}
+.gbackgr {border: 5px solid #<?php echo $g_border_color; ?>;width:<?php echo $g_main_width; ?>px;background:#<?php echo $g_background_color; ?>;text-align:center; position: relative;}
+.caption{color:#<?php echo $g_caption_color; ?>;display:block;padding:0 8px 8px 0;float:left; width: 625px;}
+.gallery_reloaded { width:<?php echo $g_main_width; ?>px;margin:auto;}
 .gallery_reloaded li div .caption{font:italic 0.9em/1.4 georgia,serif;}
 .main_image {width:<?php echo $g_main_width; ?>px;height:auto;/*In testing - max-height:<?php echo $g_main_height; ?>px;*/overflow:hidden;}
-.main_image img{ margin-bottom:10px;max-width:<?php echo $g_main_width; ?>px;height:auto;width:auto;max-height:<?php echo $g_main_height; ?>px;}
+.main_image img{ margin: 0 0 10px 0 !important;max-width:<?php echo $g_main_width; ?>px;height:auto;width:auto;max-height:<?php echo $g_main_height; ?>px;padding: 0 !important; border: 0 !important;}
 .gholder{position: relative;width: <?php echo $g_main_width; ?>px;overflow: auto;/* For plugin to work on RTL sites */direction:ltr;padding: 0 0 5px 0;}
 .gallery_reloaded {width: 10000px;margin: 0 !important;padding: 0 !important;list-style: none;}
 .gallery_reloaded li {display:block;float:left;height:<?php echo $g_thumb_height; ?>px;margin:0 8px 0 0;overflow:hidden;width:<?php echo $g_thumb_width; ?>px;background:none;list-style:none;}
@@ -30,11 +30,11 @@ body {opacity .999;}
 .gallery_reloaded li img.thumb {cursor:pointer;top:auto;left:auto;display:block;width:auto;height:auto}
 .gallery_reloaded li .caption {display:block;padding-top:.5em}
 * html .gallery_reloaded li div span {width:<?php echo $g_main_width; ?>px;} /* MSIE bug */
-p.gallery-nav{max-width:<?php echo $g_main_width; ?>px;height:30px;margin:0;padding:10px 5px 0;}
+p.gallery-nav{ position: absolute; right: 0; top: 30px; width: 70px; max-width:<?php echo $g_main_width; ?>px;height:30px;margin:0;padding: 0px;}
 p.gallery-nav a.back{background:url('<?php echo bloginfo( 'url' ) . '/wp-content/plugins/image-gallery-reloaded/images/back.png'; ?>') no-repeat; display:block;width:24px;height:24px;text-indent:-9999px;text-decoration:none;float:left;}
 p.gallery-nav a.forward{background:url('<?php echo bloginfo( 'url' ) . '/wp-content/plugins/image-gallery-reloaded/images/forward.png'; ?>') no-repeat; display:block;width:24px;height:24px;text-indent:-9999px;text-decoration:none;float:right;}
-.gallery_reloaded_container a{color: #666666; text-indent:-9999px; background:url('<?php echo bloginfo( 'url' ) . '/wp-content/plugins/image-gallery-reloaded/images/larger.png'; ?>') no-repeat;height:12px;width:12px;display:block;float:left;text-decoration:none;}
-#gr_tooltip{position:absolute;border:1px solid #<?php echo $g_caption_color; ?>;background:#<?php echo $g_background_color; ?>;-moz-border-radius:5px;padding:4px 5px;color:#<?php echo $g_caption_color; ?>;display:none;}
+.gallery_reloaded_container a{ display: none; visibility: hidden; color: #666666; text-indent:-9999px; background:url('<?php echo bloginfo( 'url' ) . '/wp-content/plugins/image-gallery-reloaded/images/larger.png'; ?>') no-repeat;height:12px;width:12px;display:block;float:left;text-decoration:none;}
+#gr_tooltip{ display: none !important; visibility: visible !important; position:absolute;border:1px solid #<?php echo $g_caption_color; ?>;background:#<?php echo $g_background_color; ?>;-moz-border-radius:5px;padding:4px 5px;color:#<?php echo $g_caption_color; ?>;display:none;}
 .loading{-moz-border-radius:4px;background:#<?php echo $g_background_color; ?>;border:1px solid #<?php echo $g_caption_color; ?>;color:#<?php echo $g_caption_color; ?>;padding:10px;text-align:center;width:100px;}
 #TB_window a:link {color: #666666; text-indent:-9999px; background:url('<?php echo bloginfo( 'url' ) . '/wp-content/plugins/image-gallery-reloaded/images/close.png'; ?>') no-repeat;height:24px;width:24px;display:block;}
 .TB_overlayBG {background-color:#000;filter:alpha(opacity=75);-moz-opacity: 0.75;opacity: 0.75;}
@@ -44,4 +44,11 @@ p.gallery-nav a.forward{background:url('<?php echo bloginfo( 'url' ) . '/wp-cont
 #TB_window img#TB_Image {border: 4px solid #<?php echo $g_border_color; ?>;}
 #TB_caption{height:25px;padding:7px 10px 10px 12px;float:left;color:#<?php echo $g_caption_color; ?>;}
 #TB_closeWindow{float:right;height:25px;padding:4px 9px 10px 0;color:#<?php echo $g_caption_color; ?>;}
+.gallery_reloaded img { border: 0 !important; padding: 0 !important;}
+.slideshowtitle { color: #fff; padding: 0px 5px 5px; font-size: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: -2px;}
+.slideface { float: left; text-align: left;}
+.slidetwit { float: left; width: 100px; text-align: left; }
+.slideshare { margin: 5px 0;}
+.slideemail { float: left; width: 100px; text-align: left;}
+.slidetitle { color: #fff; }
 </style>

@@ -35,7 +35,7 @@ jQuery(function($){jQuery('.gallery').addClass('gallery_reloaded');jQuery('ul.ga
 /*<![CDATA[*/
 jQuery(document).ready(function() {
     jQuery('.main_image a').attr({class: "thickbox", rel: "thickbox"});
-});
+
 /*]]>*/
 </script>
 <?php
@@ -85,12 +85,25 @@ global $post;
 	$listtag = tag_escape($listtag);
 	$itemtag = tag_escape($itemtag);
 	$captiontag = tag_escape($captiontag);
+	$titletag = tag_escape($titletag);
 	$columns = intval($columns);
 	$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
 
 // The Gallery init
 	$output = apply_filters('gallery_style', "<div class='gbackgr'>");
-
+  
+  $current_post = wp_get_single_post( $id );
+  
+  //var_dump($current_post);
+  
+  $output .= "<div class='slideshowtitle'>" . $current_post->post_title . "</div>";
+  $output .= "<div class='slidetitle'>L&nbsp;</div>";
+  $output .= '<div class="slideshare">';
+  $output .= '<span class="slideface"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="'. $current_post->permalink .'" layout="button_count" show_faces="false" width="80"></fb:like></span>';
+  $output .= '';
+  $output .= '<div class="slidetwit"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>';
+  $output .= '<div class="slideemail"><span class="st_email_hcount" st_title="' . $current_post->title . '" st_url="' . $current_post->permalink . '" displayText="share"></span></div>';
+  $output .= '</div>';
 
 	if($g_fwd_back_position == 'top') {
 	if($g_fwd_back_add == 'true') {
@@ -107,6 +120,7 @@ if ($g_slide == 'bottom') {
 		$img = wp_get_attachment_image_src($id, $size);
 		$img = $img[0];
 		$title = $attachment->post_excerpt;
+		//var_dump($attachment);
 		if($title == '') $title = $attachment->post_title;
 if($count == 1)
 $output .= "<li class='active'>";
@@ -116,6 +130,7 @@ $output .= "<li>";
 		$output .= "\t<a href=\"$link\" title=\"$title\" class=\"$a_class\" rel=\"$a_rel\">";
 		$output .= "<img src=\"$img\" alt=\"$title\" />";
 		$output .= "</a>";
+		$output .= "<p class='currentposttitle'>" . $attachment->post_title . "</a>";
 		$output .= "</li>
 ";
 $count++;

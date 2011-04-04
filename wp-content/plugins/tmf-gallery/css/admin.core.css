@@ -1,0 +1,39 @@
+@CHARSET "ISO-8859-1";
+
+#icon-tmfgallery.icon32 {
+	background: transparent url(../images/folder_mono32x32.png) no-repeat;
+}
+
+.form-table th {
+	font-size: 12px;	
+}
+
+#tmfg_panel_controls .inside,
+#tmfg_panel_gallery_detail .inside { margin: 0px; }
+
+/* Editor */
+#post-status-info .autosave-info { padding: 2px 15px 2px 2px; }
+
+/* Gallery-Tree */
+#tmfg-gallery-tree li { margin: 0; }
+#tmfg-gallery-tree .ui-icon { float: left; }
+#tmfg-gallery-tree .tmfg-gallery-tree-child { padding-left: 1.5em; }
+#tmfg-gallery-tree .gallery div.container{
+	border: 1px solid #DFDFDF;
+	background-color: #EDEDED;
+	margin: 2px;
+	padding: 4px;
+	
+	-webkit-border-radius: 6px 6px;
+    -khtml-border-radius: 6px 6px;
+    -moz-border-radius: 6px 6px;
+	border-radius: 6px 6px;
+}
+
+table.table-seperator {
+	border-bottom: 1px solid #DFDFDF;	
+}
+
+.left-indented {
+	margin-left: 20px;
+}

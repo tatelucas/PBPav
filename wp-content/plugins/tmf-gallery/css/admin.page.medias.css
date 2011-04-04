@@ -1,0 +1,102 @@
+@CHARSET "ISO-8859-1";
+
+table.tmfg-medias-view-list {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #DFDFDF;
+	
+	width: 100%;
+	border-collapse:collapse;
+}
+
+table.tmfg-medias-view-list td {
+	vertical-align: top;
+}
+
+table.tmfg-medias-view-list tbody td {}
+
+table.tmfg-medias-view-list td.image-id {
+	width: 2em;
+	text-align: center;
+}
+
+table.tmfg-medias-view-list td.image-thumbnail {
+	width: 160px;
+	text-align: center;
+}
+
+table.tmfg-medias-view-list td.image-name {
+	min-width: 20em;
+}
+
+table.tmfg-medias-view-list td.image-description div {
+	max-height: 80px;
+	overflow: hidden;
+}
+
+table.tmfg-medias-view-list td.image-galleries {
+	min-width: 10em;
+}
+
+table.tmfg-medias-view-list thead th,
+table.tmfg-medias-view-list tfoot th {
+	background-color: #F1F1F1;
+	padding: 5px;
+	text-align: left;
+	
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #DFDFDF;
+}
+
+table.tmfg-medias-view-list thead th.image-id,
+table.tmfg-medias-view-list tfoot th.image-id,
+table.tmfg-medias-view-list thead th.image-thumbnail,
+table.tmfg-medias-view-list tfoot th.image-thumbnail {
+	text-align: center;
+}
+
+table.tmfg-medias-view-list td {
+	padding: 5px;
+	
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #DFDFDF;
+}
+
+/* Gallery view */
+div#tmfg-medias-view-gallery .image {
+	float: left;
+	width: 160px;	
+	
+	margin: 5px;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: #DFDFDF;
+	
+	-webkit-border-radius: 5px 5px;
+    -khtml-border-radius: 5px 5px;
+    -moz-border-radius: 5px 5px;
+	border-radius: 5px 5px;
+}
+
+div#tmfg-medias-view-gallery .image-title {
+	height: 1em;
+	overflow: hidden;
+	text-align: center;
+	
+	background-color: #F1F1F1;
+}
+
+div#tmfg-medias-view-gallery .image-title a {
+	text-decoration: none;
+}
+
+div#tmfg-medias-view-gallery .image-title,
+div#tmfg-medias-view-gallery .image-content,
+div#tmfg-medias-view-gallery .image-control {
+	padding: 5px;
+}
+
+div#tmfg-medias-view-gallery .image-control .ui-icon { float: left; }
