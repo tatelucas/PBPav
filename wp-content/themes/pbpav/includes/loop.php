@@ -17,6 +17,11 @@
 <?php if (!is_page()) { 
   // This inserts metadata everywhere except on Pages  
   ?>
+
+<div class="sharethiscont">
+<span class='st_sharethis_button' displayText='ShareThis'></span>  
+</div>
+  
 <p class="postmetadata"><em><?php _e('by','gravy'); ?></em> <?php the_author_posts_link('namefl'); ?> <em><?php _e('on','gravy'); ?></em> <?php the_time('M d, Y'); ?> 
     <?php if (!is_single()) { ?> <span class="commentcount">(<?php comments_popup_link('0', '1', '%'); ?>) <?php _e('Comments','gravy'); ?></span><?php } ?>
 </p>

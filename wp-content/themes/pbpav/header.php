@@ -63,6 +63,8 @@ body {
 
 </script>
 
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'2ba9d27c-e8a1-4a67-a4de-7032a0c9f339'});</script>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -110,11 +112,25 @@ body {
     <ul id="mycarousel" class="jcarousel-skin-tango">
       <?php
       //query_posts("post_type=event&showposts=12&sitelocation=featured");
+
+        $topfeaturedargs = array(
+        'post_type' => 'event',
+        'showposts' => '12',
+        'meta_key' => 'removedate',
+        'meta_compare' => '>=',
+        'meta_value' => mktime(),
+        'sitelocation' => 'featured'     
+        );
+
+        $top_featured_posts = query_posts($topfeaturedargs);  
+
+      /*
       $top_featured_posts = get_posts(array(
         'numberposts' => 12,
         'sitelocation' => 'featured',
         'post_type' => array('event')
       ));
+      */
       
       ?>
     	<?php 
@@ -138,6 +154,6 @@ body {
   </div>  
 
 </div><!--/masthead-->
-
+<div class="clear"></div>
 <div id="main">
 

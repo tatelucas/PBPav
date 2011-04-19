@@ -56,15 +56,6 @@ function events() {
 		'add_new_item' => __( 'Add New Type' ),
 		'new_item_name' => __( 'New Type Name' ),
 	);
-  /*
-	register_taxonomy('type', array('event'), array(
-		'hierarchical' => true,
-		'labels' => $labels_categories,
-		'show_ui' => true,
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'type' ),
-	));
-	*/
 
 	$labels_location = array(
 		'name' => _x( 'Locations', 'taxonomy general name' ),
@@ -139,6 +130,11 @@ function save_timedate() {
     if ($_REQUEST['action'] != 'autosave') {
         update_post_meta($post->ID, "datetime", date(strtotime($_POST["datetime"]) ) );
         update_post_meta($post->ID, "enddatetime", date(strtotime($_POST["enddatetime"]) ) );
+        if ($_POST['deleteremovedate'] == true) {
+          update_post_meta($post->ID, "removedate", null);        
+        } else {
+          update_post_meta($post->ID, "removedate", date(strtotime($_POST["removedate"]) ) );        
+        }
         update_post_meta($post->ID, "infolink", $_REQUEST['infolink'] );
         update_post_meta($post->ID, "shorttitle", $_REQUEST['shorttitle'] );
         update_post_meta($post->ID, "pricing", $_REQUEST['pricing'] );
@@ -146,6 +142,7 @@ function save_timedate() {
         update_post_meta($post->ID, "doorsopen", $_REQUEST['doorsopen'] );
         update_post_meta($post->ID, "promoter", $_REQUEST['promoter'] );
         update_post_meta($post->ID, "showtimes", $_REQUEST['showtimes'] );
+
     }
 }
 
@@ -163,6 +160,14 @@ function event_meta_options() {
 		$enddatetime = get_post_meta($post->ID, 'enddatetime', true);
 		if ($enddatetime) {
 		  $ed = date("m/d/Y g:i A", $enddatetime);
+    }
+
+		$removedate = get_post_meta($post->ID, 'removedate', true);
+		if ($removedate) {
+		  $rd = date("m/d/Y g:i A", $removedate);
+    } else {
+      $tempdate = strtotime(date("Y-m-d", strtotime($date)) . " +1 month");
+      $rd = date("m/d/Y g:i A", mktime(0, 0, 0, 3, 0, 2099));
     }
     
 		$infolink = get_post_meta($post->ID,'infolink',true);
@@ -206,6 +211,7 @@ function event_meta_options() {
         jQuery("#textareaID").addClass("mceEditor");
         if ( typeof( tinyMCE ) == "object" && typeof( tinyMCE.execCommand ) == "function" ) {
         tinyMCE.execCommand("mceAddControl", false, "showtimes");
+        tinyMCE.execCommand("mceAddControl", false, "pricing");
         }
         
         });
@@ -228,7 +234,8 @@ function event_meta_options() {
 <?php
 	echo '<label for="pricing">' .__("Ticket Information (Pricing):") . "</label>";
 ?>
-       	<input id="pricing" name="pricing" class="plaintext" value="<?php echo $pricing; ?>" />
+       	<textarea id="pricing" name="pricing" class="plaintext" style="width: 400px; height: 120px;"><?php echo wpautop($pricing); ?></textarea>
+       	<!--<input id="pricing" name="pricing" class="plaintext" value="<?php echo $pricing; ?>" />-->
 <?php
 	echo '<label for="parking">' .__("Parking Info (Time and costs):") . "</label>";
 ?>
@@ -241,6 +248,24 @@ function event_meta_options() {
 	echo '<label for="promoter">' .__("Promoter:") . "</label>";
 ?>
        	<input id="promoter" name="promoter" class="plaintext" value="<?php echo $promoter; ?>" />       	       	
+<?php
+	echo '<label for="removedate">' .__("Date / Time to Remove from the Site:") . "</label>";
+	?>	
+       	<input id="removedate" name="removedate" class="enddatetime" value="<?php echo $rd; ?>" />
+        <script type="text/javascript">
+			jQuery("#removedate").AnyTime_picker({
+                hideInput : false,
+                placement : 'popup',
+                askSecond : false,
+                format	  : '%m/%d/%Y %l:%i %p',
+                baseYear  : <?php echo date('Y'); ?>
+            });
+        </script>
+	    <div class="clear"></div>
+<?php
+	//echo '<label for="deleteremovedate">' .__("Delete the current Remove Date:") . "</label>";
+?>
+       	<!--<input type="checkbox" id="deleteremovedate" name="deleteremovedate" class="plaintext" value="Y" />-->
 <?php
 
 }

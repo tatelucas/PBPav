@@ -46,16 +46,34 @@ if ($_REQUEST['eventcat']) {
   
   $curterm = get_term($_REQUEST['eventcat'],'eventcat' );
   if ($curterm) {
-    $curtermparameter = 'eventcat=' . $curterm->slug;
+    //$curtermparameter = 'eventcat=' . $curterm->slug;
+    $curtermparameter = $curterm->slug;    
     //echo $curtermparameter;
   }
 }
 
-query_posts("post_type=event&showposts=6&paged=$page&$curtermparameter");
+$args = array(
+'post_type' => 'event',
+'showposts' => '6',
+'paged' => $page,
+'eventcat' => $curtermparameter,
+'meta_key' => 'removedate',
+'meta_compare' => '>=',
+'meta_value' => mktime()
+);
+
+//query_posts("post_type=event&showposts=6&paged=$page&$curtermparameter");
+query_posts($args);
+
+
 ?>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-  <?php include (TEMPLATEPATH . '/includes/eventloop.php'); ?>
+   
+   <?php
+     include (TEMPLATEPATH . '/includes/eventloop.php');                 
+   ?>
+  
 	<?php endwhile; ?>
 
 		  <?php numeric_pagination(); ?>

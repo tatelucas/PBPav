@@ -91,7 +91,7 @@
 	  }
 	  
 	  if ($pricing[0]) {
-	    echo '<p><strong>Ticket Information (Pricing)</strong><br />' . $pricing[0] . '</p>';
+	    echo '<div class="showtimes"><strong>Ticket Information (Pricing)</strong><br />' . wpautop($pricing[0]) . '</div>';
 	  }
 
 	  if ($parking[0]) {

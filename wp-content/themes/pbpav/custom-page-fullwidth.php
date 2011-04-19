@@ -6,12 +6,13 @@ Template Name: Full Width
 
 <?php get_header(); ?>
 
+	<div id="content" class="widecontent">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
 				 <?php include (TEMPLATEPATH . '/includes/loop.php'); ?>
 
-        <?php comments_template(); ?>
+        <?php //comments_template(); ?>
         
 		<?php endwhile; else: ?>
 
@@ -19,6 +20,6 @@ Template Name: Full Width
 
 <?php endif; ?>
         
-
+    </div><!--/content-->
 
 <?php get_footer(); ?>

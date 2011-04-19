@@ -66,3 +66,14 @@ blockquote {
  	font-size:0.9em; 
 	}
 
+#eventheadslider, .kingsnavcont, .topnavcont, .searchform, .printcal, .prevmonth, .nextmonth, #post-394 h1.posttitle, #calendarform {
+  display: none;
+}
+
+.calendarmonthdiv {
+  display: none;
+}
+
+.printmonth {
+  display: block !important;
+}

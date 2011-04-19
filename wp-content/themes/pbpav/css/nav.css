@@ -7,8 +7,8 @@
 }
 
 .top-nav {
-  width: 615px;
-  margin: 3px 10px 0 0;
+  width: 625px;
+  margin: 3px 0px 0 0;
   float: left;
   padding: 0;
 }
@@ -40,7 +40,7 @@
 		
 .top-nav ul.menu, div.menu ul.menu {
 	list-style: none;
-	z-index:1;
+	z-index:1000000;
 	line-height: 1.0;
 	padding:0;
 	display:inline-block;
@@ -130,7 +130,7 @@ div.menu ul.menu li li li.sfhover ul {
 	left: -5px;
 	height: auto;
 	width: 178px;
-	z-index:1 !important;
+	z-index:1000000 !important;
 	line-height:1;
 	margin-left:11px;
 	background: #e1e1e1;
@@ -205,11 +205,8 @@ div.menu .menu li li li.sfhover ul {
 	background-image:url(../images/arrow_child.gif) !important;
 	}
 	
-	
-	
-	
 .kings-nav {
-  width: 800px;
+  width: 838px;
   float: left;
 }
 	
@@ -231,4 +228,8 @@ div.menu .menu li li li.sfhover ul {
 		
 .kings-nav ul li a:hover {
   color: #e1e1e1;
+}
+
+#menu-item-26 .sub-menu {
+  margin-left: 5px !important;
 }

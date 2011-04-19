@@ -341,7 +341,7 @@ class CalendarArchives
         }
 
         // Get posts for given year
-        $posts = $wpdb->get_results('SELECT * FROM ' . $wpdb->posts . ' WHERE post_status IN ' . $postStatuses . ' AND post_password = "" AND post_type = "post" AND ' . implode(' AND ', $conditions) . ' ORDER BY post_date ASC');
+        $posts = $wpdb->get_results('SELECT * FROM ' . $wpdb->posts . ' WHERE post_status IN ' . $postStatuses . ' AND post_password = "" AND post_type = "event" AND ' . implode(' AND ', $conditions) . ' ORDER BY post_date ASC');
 
         // Initialize variable to store 'show images' flag
         $showImages = (bool)$options['show_images'];
@@ -362,11 +362,18 @@ class CalendarArchives
         for ($index = 0; $index < count($posts); $index++)
         {
             // Post's time
-            $postTime = strtotime($posts[$index]->post_date);
+            
+            //TATE - Get event date instead of post date
+            $eventtime = get_post_meta($posts[$index]->ID, 'datetime'); 
+            $endeventtime = get_post_meta($posts[$index]->ID, 'enddatetime');
+            //var_dump($eventtime);
+            
+            //$postTime = strtotime($posts[$index]->post_date);
+            $postTime = $eventtime[0];
 
             // Post's month
             $month = (int)date('m', $postTime);
-
+            
             // If no posts for given month then initialize array for it
             if (!isset($postsPerDay[$month]))
             {
@@ -396,6 +403,28 @@ class CalendarArchives
 
             // Build needed data
             $postsPerDay[$month][$day][] = $index;
+
+            //TATE - if the event is a multiple day event, need to populate those days as well.
+            $multidaypost = false;
+            if (strlen($endeventtime[0]) > 0) {
+              //var_dump($posts[$index]->ID);
+              $multidaypost = true;
+              
+              $multidaystart = date('Y-m-d', $eventtime[0]);
+              $multidayend = date('Y-m-d', $endeventtime[0]);
+              
+              $multidayarray = $this->createDateRangeArray($multidaystart,$multidayend);
+              //var_dump($multidayarray);
+              $multidaycounter = 1;
+              foreach($multidayarray as $multiday) {
+                if ($multidaycounter != 1) {
+                  $newday = (int)date('d', strtotime($multiday));
+                  $newmonth = (int)date('m', strtotime($multiday));
+                  $postsPerDay[$newmonth][$newday][] = $index;
+                }
+                $multidaycounter++;
+              }
+            }
 
             // If 'show images' flag is enabled and no background image for given month's given day then proceed further
             if ($showImages && false === $backgroundImages[$month][$day])
@@ -581,6 +610,31 @@ class CalendarArchives
         // Return re-sized background image's URL
         return str_replace(ABSPATH, get_option('siteurl') . '/', $resizedBackgroundImage);
     }
+    
+    //TATE - create an array of dates for start and end dates
+    function createDateRangeArray($strDateFrom,$strDateTo) {
+      // takes two dates formatted as YYYY-MM-DD and creates an
+      // inclusive array of the dates between the from and to dates.
+    
+      // could test validity of dates here but I'm already doing
+      // that in the main script
+    
+      $aryRange=array();
+    
+      $iDateFrom=mktime(1,0,0,substr($strDateFrom,5,2),     substr($strDateFrom,8,2),substr($strDateFrom,0,4));
+      $iDateTo=mktime(1,0,0,substr($strDateTo,5,2),     substr($strDateTo,8,2),substr($strDateTo,0,4));
+    
+      if ($iDateTo>=$iDateFrom) {
+        array_push($aryRange,date('Y-m-d',$iDateFrom)); // first entry
+    
+        while ($iDateFrom<$iDateTo) {
+          $iDateFrom+=86400; // add 24 hours
+          array_push($aryRange,date('Y-m-d',$iDateFrom));
+        }
+      }
+      return $aryRange;
+    }    
+    
 }
 
 // Create plugin object

@@ -12,12 +12,25 @@ Template Name: Homepage
     <div class="postslider">
     <?php
     // Load 7 latest posts in the 'Featured' category
+
+        $featuredargs = array(
+        'post_type' => 'event',
+        'showposts' => '10',
+        'meta_key' => 'removedate',
+        'meta_compare' => '>=',
+        'meta_value' => mktime(),
+        'sitelocation' => 'billboard'     
+        );
+
+        $featured_posts = query_posts($featuredargs);  
+
+    /*
     $featured_posts = get_posts(array(
       'numberposts' => 7,
       'sitelocation' => 'billboard',
       'post_type' => array('post','event')
     ));
-
+    */
     if ($featured_posts) {
       echo '<ul>';
       $post_count = 0;
@@ -106,11 +119,28 @@ Template Name: Homepage
         <?php
         $page = (get_query_var('page')) ? get_query_var('page') : 1;
         //echo $page;
-        query_posts("post_type=event&showposts=10&paged=$page");
+        //query_posts("post_type=event&showposts=10&paged=$page");
+        
+        $evargs = array(
+        'post_type' => 'event',
+        'showposts' => '10',
+        'paged' => $page,
+        'meta_key' => 'removedate',
+        'meta_compare' => '>=',
+        'meta_value' => mktime()
+        );
+        
+        //query_posts("post_type=event&showposts=6&paged=$page&$curtermparameter");
+        query_posts($evargs);        
+        
+        
         ?>
         
         	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-          <?php include (TEMPLATEPATH . '/includes/eventloop.php'); ?>
+          <?php
+               include (TEMPLATEPATH . '/includes/eventloop.php');                 
+          ?>
+
         	<?php endwhile; ?>
         
         		  <?php numeric_pagination(); ?>
