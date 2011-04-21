@@ -328,8 +328,10 @@ class CalendarArchives
         $postStatuses = '("' . implode('", "', $postStatuses) . '")';
 
         // Conditions to fetch list of posts, by default fetch given year's posts
-        $conditions = array('year' => 'YEAR(post_date) = ' . $year);
-
+        //Tate - changed this
+        //$conditions = array('year' => 'YEAR(post_date) = ' . $year);
+        $conditions = array('year' => 'YEAR(post_date) > 1990');
+        
         // If category is set then filter posts using it
         if ($category)
         {
@@ -341,7 +343,7 @@ class CalendarArchives
         }
 
         // Get posts for given year
-        $posts = $wpdb->get_results('SELECT * FROM ' . $wpdb->posts . ' WHERE post_status IN ' . $postStatuses . ' AND post_password = "" AND post_type = "event" AND ' . implode(' AND ', $conditions) . ' ORDER BY post_date ASC');
+        $posts = $wpdb->get_results('SELECT * FROM ' . $wpdb->posts . ' WHERE post_status IN ' . $postStatuses . ' AND post_password = "" AND post_type = "event" AND ' . implode(' AND ', $conditions) . ' ORDER BY post_date ASC');     
 
         // Initialize variable to store 'show images' flag
         $showImages = (bool)$options['show_images'];

@@ -55,6 +55,12 @@ if ($current_month == 1) {
   $prev_calendar_year = $calendar_year;
 }
 
+if ($_REQUEST['tate']) {
+  //echo '<pre>';
+  //var_dump($postsPerDay);
+  //echo '</pre>';
+}
+
 ?>
 
 <div class="printcal">
