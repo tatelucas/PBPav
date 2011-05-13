@@ -18,7 +18,6 @@
     </span> &bull;
     <?php _e('Powered by','gravy'); ?>
     <a href="http://wordpress.org/" target="_blank">WordPress</a>
-    <?php wp_footer(); ?>
   </div>
   <!--/right-->
 
@@ -42,6 +41,6 @@
     
      
 </script>
-
+    <?php wp_footer(); ?>
 </body>
 </html>

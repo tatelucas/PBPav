@@ -65,6 +65,19 @@ body {
 
 <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'2ba9d27c-e8a1-4a67-a4de-7032a0c9f339'});</script>
 
+<script type='text/javascript' src='http://partner.googleadservices.com/gampad/google_service.js'>
+</script>
+<script type='text/javascript'>
+GS_googleAddAdSenseService("ca-pub-0813157675530516");
+GS_googleEnableAllServices();
+</script>
+<script type='text/javascript'>
+GA_googleAddSlot("ca-pub-0813157675530516", "300x250_PBPAV_MAIN_UPPERRIGHT");
+</script>
+<script type='text/javascript'>
+GA_googleFetchAds();
+</script>
+
 </head>
 
 <body <?php body_class(); ?>>

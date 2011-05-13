@@ -118,7 +118,15 @@ Template Name: Homepage
     
         <?php
         $page = (get_query_var('page')) ? get_query_var('page') : 1;
-        //echo $page;
+
+        $pieces = parse_url($_SERVER['REQUEST_URI']);
+        $path = trim($pieces['path'], '/');
+        $segments = explode('/', $path);
+
+        if ($segments[0] == 'page') {
+          $page = $segments[1];
+        }
+
         //query_posts("post_type=event&showposts=10&paged=$page");
         
         $evargs = array(
