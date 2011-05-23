@@ -69,17 +69,17 @@ if ($_REQUEST['tate']) {
 
 <form name="calendarform" id="calendarform" action="/calendar" method="get">
   <select name="calendar_month" id="calendar_month">
-    <option value="1"<?php if ($current_month == '1') { echo ' selected';} ?>>January</option>
-    <option value="2"<?php if ($current_month == '2') { echo ' selected';} ?>>February</option>
-    <option value="3"<?php if ($current_month == '3') { echo ' selected';} ?>>March</option>
-    <option value="4"<?php if ($current_month == '4') { echo ' selected';} ?>>April</option>
-    <option value="5"<?php if ($current_month == '5') { echo ' selected';} ?>>May</option>
-    <option value="6"<?php if ($current_month == '6') { echo ' selected';} ?>>June</option>
-    <option value="7"<?php if ($current_month == '7') { echo ' selected';} ?>>July</option>
-    <option value="8"<?php if ($current_month == '8') { echo ' selected';} ?>>August</option>
-    <option value="9"<?php if ($current_month == '9') { echo ' selected';} ?>>September</option>
-    <option value="10"<?php if ($current_month == '10') { echo ' selected';} ?>>October</option>
-    <option value="11"<?php if ($current_month == '11') { echo ' selected';} ?>>November</option>
+    <option value="1"<?php if ($current_month == '1') { echo ' selected';}; if (1 < date('n')) { echo 'class="pastmonth"'; } ?>>January</option>
+    <option value="2"<?php if ($current_month == '2') { echo ' selected';}; if (2 < date('n')) { echo 'class="pastmonth"'; } ?>>February</option>
+    <option value="3"<?php if ($current_month == '3') { echo ' selected';}; if (3 < date('n')) { echo 'class="pastmonth"'; }  ?>>March</option>
+    <option value="4"<?php if ($current_month == '4') { echo ' selected';}; if (4 < date('n')) { echo 'class="pastmonth"'; }  ?>>April</option>
+    <option value="5"<?php if ($current_month == '5') { echo ' selected';}; if (5 < date('n')) { echo 'class="pastmonth"'; }  ?>>May</option>
+    <option value="6"<?php if ($current_month == '6') { echo ' selected';}; if (6 < date('n')) { echo 'class="pastmonth"'; }  ?>>June</option>
+    <option value="7"<?php if ($current_month == '7') { echo ' selected';}; if (7 < date('n')) { echo 'class="pastmonth"'; }  ?>>July</option>
+    <option value="8"<?php if ($current_month == '8') { echo ' selected';}; if (8 < date('n')) { echo 'class="pastmonth"'; }  ?>>August</option>
+    <option value="9"<?php if ($current_month == '9') { echo ' selected';}; if (9 < date('n')) { echo 'class="pastmonth"'; }  ?>>September</option>
+    <option value="10"<?php if ($current_month == '10') { echo ' selected';}; if (10 < date('n')) { echo 'class="pastmonth"'; }  ?>>October</option>
+    <option value="11"<?php if ($current_month == '11') { echo ' selected';}; if (11 < date('n')) { echo 'class="pastmonth"'; }  ?>>November</option>
     <option value="12"<?php if ($current_month == '12') { echo ' selected';} ?>>December</option>                
   </select>
   <select name="calendar_year" id="calendar_year">
@@ -295,3 +295,21 @@ for ($month = ($reverseMonths ? 12 : 1); ($reverseMonths ? 0 < $month : 12 >= $m
 <?php
 }
 ?>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  hidePastMonths();
+  
+  jQuery("#calendar_year").change(function() {
+      hidePastMonths();
+    });
+});
+
+function hidePastMonths() {
+   var cyear = jQuery("#calendar_year option:selected").val();
+   if(cyear == '<?php echo date("Y") ?>') {
+     jQuery(".pastmonth").attr("disabled","disabled");
+   } else {
+     jQuery(".pastmonth").attr("disabled","");   
+   }
+}
+</script>

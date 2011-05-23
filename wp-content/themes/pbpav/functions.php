@@ -453,4 +453,26 @@ function numeric_pagination ($pageCount = 9, $query = null) {
 	
 	</div>
 
-<?php } ?>
+<?php } 
+
+/* Facebook Meta Info ********************************************/
+add_action( 'wp_head', 'fb_like_thumbnails' );
+
+function fb_like_thumbnails() {
+global $post;
+
+$default = 'http://cdn.powerbalancepavilion.com/wp-content/themes/pbpav/images/logo.png';
+//$content = $posts[0]->post_content; // $posts is an array, fetch the first element
+
+//$output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches);
+
+$image = wp_get_attachment_image_src( get_post_thumbnail_id( $posts[0]->ID ), 'single-post-thumbnail' );
+
+if ( $image[0] )
+$thumb = $image[0];
+else
+$thumb = $default;
+echo "\n\n<!-- Facebook Like Thumbnail -->\n<link rel=\"image_src\" href=\"$thumb\" />\n<!-- End Facebook Like Thumbnail -->\n\n";
+}
+
+?>

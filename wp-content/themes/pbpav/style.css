@@ -1166,7 +1166,7 @@ a.rsswidget, a.rsswidget:visited {
 
 .fbbox {
   border-bottom: 1px dashed #C7D0DF;
-  min-height: 23px;
+  min-height: 43px;
   padding: 7px;  
 }
 
@@ -1188,7 +1188,7 @@ a.rsswidget, a.rsswidget:visited {
 }
 
 .badges .st_twitter_vcount, .st_facebook_vcount, .st_email_vcount {
-  margin: 0 5px 0 0;
+  margin: 0 0px 0 0;
 }
 
 .eventsearch {
