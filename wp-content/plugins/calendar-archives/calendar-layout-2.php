@@ -57,7 +57,9 @@ if ($current_month == 1) {
 
 if ($_REQUEST['tate']) {
   //echo '<pre>';
+  //var_dump($yearPostsPerDay);
   //var_dump($postsPerDay);
+  //var_dump($calendar_year);
   //echo '</pre>';
 }
 
@@ -128,13 +130,14 @@ $showmonth = false;
 for ($month = ($reverseMonths ? 12 : 1); ($reverseMonths ? 0 < $month : 12 >= $month); ($reverseMonths ? $month-- : $month++))
 {
     // If 'hide no posts months' setting flag is ON and there are no posts for current month in current year then move to next month
-    if ($hideNoPostsMonths && !isset($postsPerDay[$month]))
+    //if ($hideNoPostsMonths && !isset($postsPerDay[$month]))
+    if ($hideNoPostsMonths && !isset($yearPostsPerDay[$calendar_year][$month]))
     {
         continue;
     }
 
     // Time for first day of current month/year
-    $timeForFirstDayOfMonth = mktime(0, 0, 0, $month, 1, $year);
+    $timeForFirstDayOfMonth = mktime(0, 0, 0, $month, 1, $calendar_year);
 
     if (date('n', $timeForFirstDayOfMonth) == $current_month) {
       $showmonth = ' style="display: block;"';
@@ -155,7 +158,7 @@ for ($month = ($reverseMonths ? 12 : 1); ($reverseMonths ? 0 < $month : 12 >= $m
   <a href="/calendar/?calendar_month=<?php echo $prev_calendar_month; ?>&calendar_year=<?php echo $prev_calendar_year; ?>">Previous Month</a>
 </div>
 
-<h1><?php echo date('F', $timeForFirstDayOfMonth); ?> <?php echo $year; ?></h1>
+<h1><?php echo date('F', $timeForFirstDayOfMonth); ?> <?php echo $calendar_year; ?></h1>
 
 
 
@@ -208,7 +211,7 @@ for ($month = ($reverseMonths ? 12 : 1); ($reverseMonths ? 0 < $month : 12 >= $m
     for ($day = 1; $day <= $totalDaysInMonth; $day++)
     {
         // If new week started then close current UL and start new one
-        if (1 < $day && $firstDayOfWeek == date('w', mktime(0, 0, 0, $month, $day, $year)))
+        if (1 < $day && $firstDayOfWeek == date('w', mktime(0, 0, 0, $month, $day, $calendar_year)))
         {
 ?>
 </ul><br class="clear" />
@@ -242,13 +245,15 @@ for ($month = ($reverseMonths ? 12 : 1); ($reverseMonths ? 0 < $month : 12 >= $m
         }
 
         // If any post(s) for current day in current month/year then display it/them
-        if (isset($postsPerDay[$month][$day]))
+        //if (isset($postsPerDay[$month][$day]))
+        if (isset($yearPostsPerDay[$calendar_year][$month][$day]))
         {
 ?>
         <ul<?php echo ($backgroundImage ? ' class="invisible"' : ''); ?>>
 <?php
             // Loop through post(s) for current day in current month/year to display it/them
-            foreach ($postsPerDay[$month][$day] as $key => $index)
+            //foreach ($postsPerDay[$month][$day] as $key => $index)
+            foreach ($yearPostsPerDay[$calendar_year][$month][$day] as $key => $index)
             {
             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $posts[$index]->ID ), 'single-post-thumbnail' );
 ?>
@@ -271,7 +276,7 @@ for ($month = ($reverseMonths ? 12 : 1); ($reverseMonths ? 0 < $month : 12 >= $m
     }
 
     // Weekday for last day of current month/year
-    $weekdayForLastDayOfMonth = date('w', mktime(0, 0, 0, $month, $totalDaysInMonth, $year));
+    $weekdayForLastDayOfMonth = date('w', mktime(0, 0, 0, $month, $totalDaysInMonth, $calendar_year));
 
     // Calculate total empty days
     $totalEmptyDays = ($firstDayOfWeek - $weekdayForLastDayOfMonth - 1);

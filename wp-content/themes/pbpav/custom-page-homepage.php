@@ -12,13 +12,15 @@ Template Name: Homepage
     <div class="postslider">
     <?php
     // Load 7 latest posts in the 'Featured' category
+  
+        $comparedate = strtotime('-8 hours');
 
         $featuredargs = array(
         'post_type' => 'event',
         'showposts' => '10',
         'meta_key' => 'removedate',
         'meta_compare' => '>=',
-        'meta_value' => mktime(),
+        'meta_value' => $comparedate,
         'sitelocation' => 'billboard'     
         );
 
@@ -86,7 +88,7 @@ Template Name: Homepage
         setup_postdata($post);
         ++$post_count;
         ?>
-        <a href="" id="<?php echo "link_post_count-{$post_count}"; ?>">
+        <a target="_parent" href="<?php the_permalink(); ?>" id="<?php echo "link_post_count-{$post_count}"; ?>">
           <span class="thumbnail-arrow"></span>
           <?php
           if (has_post_thumbnail()) {
@@ -103,7 +105,7 @@ Template Name: Homepage
     <div style="clear:both"></div>
   </div><!--/homepageslidercont-->
   <script type="text/javascript">
-    jQuery('.homepageslidercont .postslider ul').cycle({timeout:8000,fx:'scrollDown',speed:500,pager:'.homepageslidercont .vertical',pagerEvent:'click mouseenter mouseleave',pauseOnPagerHover:1,enableCustom:true,imageParentId:'.homepageslidercont',imageParentIdHover:true,before:marqueeBeforeShow,prefix:'marquee',delay:0});
+    jQuery('.homepageslidercont .postslider ul').cycle({timeout:8000,fx:'scrollDown',speed:500,pager:'.homepageslidercont .vertical',pagerEvent:'mouseenter mouseleave',pauseOnPagerHover:1,enableCustom:true,imageParentId:'.homepageslidercont',imageParentIdHover:true,before:marqueeBeforeShow,prefix:'marquee',delay:0});
   </script>
 
   <div class="homepagecontent">
@@ -126,16 +128,20 @@ Template Name: Homepage
         if ($segments[0] == 'page') {
           $page = $segments[1];
         }
-
-        //query_posts("post_type=event&showposts=10&paged=$page");
         
+        $comparedate = strtotime('-8 hours');
+        
+        if ($_REQUEST['tate']) {
+          //echo date('m/d/y g:i:sa', $comparedate);
+        }
+            
         $evargs = array(
         'post_type' => 'event',
         'showposts' => '10',
         'paged' => $page,
         'meta_key' => 'removedate',
         'meta_compare' => '>=',
-        'meta_value' => mktime()
+        'meta_value' => $comparedate
         );
         
         //query_posts("post_type=event&showposts=6&paged=$page&$curtermparameter");
@@ -227,6 +233,7 @@ Template Name: Homepage
         	  if (have_posts()) : while (have_posts()) : the_post(); 
             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );             	
         	?>
+        	
             
             <div class="homeevent">        		
         		  <div id="homepromo-post-<?php the_ID(); ?>" <?php post_class(); ?>>

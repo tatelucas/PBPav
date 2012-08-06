@@ -1,0 +1,39 @@
+.address {
+	float:right;
+	display:inline;
+	width:250px;
+}
+.address label {
+	display:block;
+}
+div.AnyTime-win {
+	float:left;
+	width:400px;
+}
+#map {
+	width:250px;
+	height:250px;
+}
+#event-info label {
+	display:block;
+	margin:10px 0 4px 10px;
+	font-weight:bold;
+}
+#event-info input {
+	font-size:1.2em;
+	width:310px;
+	padding:12px 7px 12px 42px;
+	margin:10px;
+	background:url("../../images/admin/ico_calendar_edit.png") no-repeat 5px 5px;
+	border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border:1px solid #ccc;
+}
+#event-info input#infolink, #event-info input#buylink {
+	background-image:url("../../images/admin/ico_link.png")
+}
+
+#event-info .plaintext {
+  background: none;
+}

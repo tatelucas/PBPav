@@ -1,14 +1,21 @@
 /*Top Page Navbar */
 
+.greybg {
+  background: #262626;
+  height: 82px;
+  padding: 10px 0 0 10px;
+}
+
 .topnavcont {
   float: left;
   height: 40px;
   width: 896px;  
+  margin: 38px 0 0 0;
 }
 
 .top-nav {
-  width: 625px;
-  margin: 3px 0px 0 0;
+  width: 896px;
+  margin: 0 0px 0 0;
   float: left;
   padding: 0;
 }
@@ -17,7 +24,7 @@
 	}
 
 .top-nav li {
-  font-size: 42px;
+  font-size: 39px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: -3px;
@@ -63,7 +70,7 @@ div.menu ul.menu a, div.menu ul.menu a:visited {
 	padding: 0 4px 0 3px;
 	}
 
-.top-nav ul.menu a:hover, div.menu ul.menu a:hover {
+.top-nav ul.menu a:hover, div.menu ul.menu a:hover, .top-nav ul.menu li.sfHover a {
 	color:#000;
 	background: #dfdfdf;
 	}
@@ -230,6 +237,10 @@ div.menu .menu li li li.sfhover ul {
   color: #e1e1e1;
 }
 
-#menu-item-26 .sub-menu {
-  margin-left: 5px !important;
+.sub-menu {
+  margin-left: 11px !important;
+}
+
+.sub-menu li:hover {
+  background: #ccc !important;
 }

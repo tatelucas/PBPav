@@ -52,6 +52,8 @@ if ($_REQUEST['eventcat']) {
   }
 }
 
+$comparedate = strtotime('-8 hours');
+
 $args = array(
 'post_type' => 'event',
 'showposts' => '6',
@@ -59,7 +61,7 @@ $args = array(
 'eventcat' => $curtermparameter,
 'meta_key' => 'removedate',
 'meta_compare' => '>=',
-'meta_value' => mktime()
+'meta_value' => $comparedate
 );
 
 //query_posts("post_type=event&showposts=6&paged=$page&$curtermparameter");

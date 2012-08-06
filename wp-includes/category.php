@@ -160,7 +160,6 @@ function get_category_by_slug( $slug  ) {
 	return $category;
 }
 
-
 /**
  * Retrieve the ID of a category from its name.
  *
@@ -175,7 +174,6 @@ function get_cat_ID( $cat_name='General' ) {
 		return $cat->term_id;
 	return 0;
 }
-
 
 /**
  * Retrieve the name of a category from its ID.
@@ -193,7 +191,6 @@ function get_cat_name( $cat_id ) {
 	return $category->name;
 }
 
-
 /**
  * Check if a category is an ancestor of another category.
  *
@@ -207,19 +204,8 @@ function get_cat_name( $cat_id ) {
  * @return bool Whether $cat2 is child of $cat1
  */
 function cat_is_ancestor_of( $cat1, $cat2 ) {
-	if ( ! isset($cat1->term_id) )
-		$cat1 = &get_category( $cat1 );
-	if ( ! isset($cat2->parent) )
-		$cat2 = &get_category( $cat2 );
-
-	if ( empty($cat1->term_id) || empty($cat2->parent) )
-		return false;
-	if ( $cat2->parent == $cat1->term_id )
-		return true;
-
-	return cat_is_ancestor_of( $cat1, get_category( $cat2->parent ) );
+	return term_is_ancestor_of( $cat1, $cat2, 'category' );
 }
-
 
 /**
  * Sanitizes category data based on context.
@@ -234,7 +220,6 @@ function cat_is_ancestor_of( $cat1, $cat2 ) {
 function sanitize_category( $category, $context = 'display' ) {
 	return sanitize_term( $category, 'category', $context );
 }
-
 
 /**
  * Sanitizes data in single category key field.
@@ -253,7 +238,6 @@ function sanitize_category_field( $field, $value, $cat_id, $context ) {
 }
 
 /* Tags */
-
 
 /**
  * Retrieves all post tags.
@@ -276,7 +260,6 @@ function &get_tags( $args = '' ) {
 	$tags = apply_filters( 'get_tags', $tags, $args );
 	return $tags;
 }
-
 
 /**
  * Retrieve post tag by tag ID or tag object.
@@ -301,25 +284,7 @@ function &get_tag( $tag, $output = OBJECT, $filter = 'raw' ) {
 	return get_term( $tag, 'post_tag', $output, $filter );
 }
 
-
 /* Cache */
-
-
-/**
- * Update the categories cache.
- *
- * This function does not appear to be used anymore or does not appear to be
- * needed. It might be a legacy function left over from when there was a need
- * for updating the category cache.
- *
- * @since 1.5.0
- *
- * @return bool Always return True
- */
-function update_category_cache() {
-	return true;
-}
-
 
 /**
  * Remove the category cache data based on ID.
@@ -332,7 +297,6 @@ function update_category_cache() {
 function clean_category_cache( $id ) {
 	clean_term_cache( $id, 'category' );
 }
-
 
 /**
  * Update category structure to old pre 2.3 from new taxonomy structure.
@@ -370,6 +334,3 @@ function _make_cat_compat( &$category ) {
 		$category['category_parent'] = &$category['parent'];
 	}
 }
-
-
-?>

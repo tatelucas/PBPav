@@ -26,11 +26,16 @@ else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/jcarousel.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/mosaic.css" />
 
 <!--[if IE]>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/ie-only.css" />
 <![endif]-->
 
+
+<?php
+//date_default_timezone_set('America/Los_Angeles');
+?>
 
 <script type="text/javascript" src="http://use.typekit.com/pfu1ygk.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -78,60 +83,49 @@ GA_googleAddSlot("ca-pub-0813157675530516", "300x250_PBPAV_MAIN_UPPERRIGHT");
 GA_googleFetchAds();
 </script>
 
+<script src="http://mobileroadie.com/clientmodal/js/514" type="text/javascript"></script>
+
 </head>
 
 <body <?php body_class(); ?>>
 <div id="wrapper">
 
 <div id="masthead">
-
-  <div id="branding">
-    <div id="logo">
-      <a href="<?php echo get_option('home'); ?>/" title="<?php _e('Home','gravy'); ?>"><?php bloginfo('name'); ?></a>
-    </div><!--/logo-->
-  </div><!--/branding-->
-  
-  <div class="kingsnavcont">
-    <?php wp_nav_menu( array( 'container_class' => 'kings-nav', 'theme_location' => 'kings' ) ); ?>
-    <a href="http://www.twitter.com/pbpav" target="_blank" class="twittericon">Twitter</a>    
-    <a href="http://www.facebook.com/powerbalancepavilion" target="_blank" class="fbicon">Facebook</a>
-
-  </div><!--/kingsnavcont-->
-  
-  <div class="topnavcont">
-    <?php wp_nav_menu( array( 'container_class' => 'top-nav', 'theme_location' => 'primary' ) ); ?>
-
-    <div class="searchform">
-      <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-        <input type="text" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" value="<?php if ($_REQUEST['s']) { the_search_query(); } else { echo 'Search'; } ?>" name="s" id="searchfield" />
-        <input type="submit" value="Go" id="searchsubmit" />
-        <a href="#" class="searchweb">Web</a>
-      </form>
-    </div><!--/searchform-->
-
-    <div class="hiddengoogle">
-    <form method="get" action="http://www.google.com/search" id="googleform">
+  <div class="greybg">
+    <div id="branding">
+      <div id="logo">
+        <a href="<?php echo get_option('home'); ?>/" title="<?php _e('Home','gravy'); ?>"><?php bloginfo('name'); ?></a>
+      </div><!--/logo-->
+    </div><!--/branding-->
     
-    <input type="text"   name="q" size="31" id="googleq"
-     maxlength="255" value="" />
-    <input type="submit" value="Google Search" />
-    <input type="radio"  name="sitesearch" value="" checked />
-    </form>
+    <div class="kingsref">
+      <div class="kingscomlink"><a href="http://www.kings.com">Kings.com</a></div>
+      <div class="topfacebook"><iframe src="http://www.facebook.com/plugins/like.php?app_id=221271514579314&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpowerbalancepavilion&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe></div>
+      <div class="topgoogle"><!-- Place this tag in your head or just before your close body tag -->
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone size="medium"></g:plusone></div>
+      <div class="toptwitter"><a href="http://twitter.com/pbpav" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF">Follow @pbpav</a><script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script></div>
+    </div><!--/kingsref-->
+      
+    <div class="topnavcont">
+      <?php wp_nav_menu( array( 'container_class' => 'top-nav', 'theme_location' => 'primary' ) ); ?>
     </div>
-
-  </div>
+  </div><!--/greybg-->
    
   <div id="eventheadslider" class="jcarousel-skin-tango">
     <ul id="mycarousel" class="jcarousel-skin-tango">
       <?php
       //query_posts("post_type=event&showposts=12&sitelocation=featured");
 
+        $comparedate = strtotime('-8 hours');
+
         $topfeaturedargs = array(
         'post_type' => 'event',
         'showposts' => '12',
         'meta_key' => 'removedate',
         'meta_compare' => '>=',
-        'meta_value' => mktime(),
+        'meta_value' => $comparedate,
         'sitelocation' => 'featured'     
         );
 
@@ -151,15 +145,20 @@ GA_googleFetchAds();
       foreach ($top_featured_posts as $post) {
       setup_postdata($post);
     	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
-      $eventtime = get_post_meta($post->ID, 'datetime'); 
+      //$eventtime = get_post_meta($post->ID, 'datetime'); 
       $shorttitle = get_post_meta($post->ID, 'shorttitle'); 
     	?>
-      <li class="eventhead">
-          <a href="<?php the_permalink(); ?>">
-            <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&amp;h=94&amp;w=224px&amp;zc=1" alt="" />
-          </a>
-          <h3><a href="<?php the_permalink(); ?>"><?php echo $shorttitle[0] ?></a></h3>         
-      </li>   
+      <li>
+
+    		<div class="mosaic-block bar">
+    			<a href="<?php the_permalink(); ?>" class="mosaic-overlay">
+    				<div class="details">
+    					<h4><?php echo $shorttitle[0] ?></h4>
+    				</div>
+    			</a>
+    			<a href="<?php the_permalink(); ?>" class="mosaic-backdrop"> <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&amp;h=94&amp;w=224px&amp;zc=1" alt="" /></a>
+    		</div>   
+      </li>
     <?php } ?>    
     </ul>  
      

@@ -28,12 +28,9 @@ var findPosts;
 			var post = {
 				ps: $('#find-posts-input').val(),
 				action: 'find_posts',
-				_ajax_nonce: $('#_ajax_nonce').val()
+				_ajax_nonce: $('#_ajax_nonce').val(),
+				post_type: $('input[name="find-posts-what"]:checked').val()
 			};
-
-			var selectedItem;
-			$("input[@name='itemSelect[]']:checked").each(function() { selectedItem = $(this).val() });
-			post['post_type'] = selectedItem;
 
 			$.ajax({
 				type : 'POST',
@@ -77,6 +74,14 @@ var findPosts;
 			if ( '' == $('#find-posts-response').html() )
 				e.preventDefault();
 		});
+		$( '#find-posts .find-box-search :input' ).keypress( function( event ) {
+			if ( 13 == event.which ) {
+				findPosts.send();
+				return false;
+			}
+		} );
+		$( '#find-posts-search' ).click( findPosts.send );
+		$( '#find-posts-close' ).click( findPosts.close );
 		$('#doaction, #doaction2').click(function(e){
 			$('select[name^="action"]').each(function(){
 				if ( $(this).val() == 'attach' ) {

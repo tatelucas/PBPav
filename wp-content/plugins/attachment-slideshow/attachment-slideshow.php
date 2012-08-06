@@ -172,7 +172,7 @@ function post_attachment_slideshow_add_stylesheet() {
 function post_attachment_slideshow_add_js() {
   if(!is_admin()){
   	wp_enqueue_script ('jquery');	
-  	wp_enqueue_script ('cycle', WP_PLUGIN_URL . '/attachment-slideshow/js/jquery.cycle.all.min.js', array('jquery'), '2.97');
+  	//wp_enqueue_script ('cycle', WP_PLUGIN_URL . '/attachment-slideshow/js/jquery.cycle.all.min.js', array('jquery'), '2.97');
   	wp_enqueue_script ('jcarousel', WP_PLUGIN_URL . '/attachment-slideshow/jcarousel/lib/jquery.jcarousel.min.js', array('jquery'), '0.2.7');
   }
 }
@@ -194,82 +194,86 @@ function post_attachment_slideshow_helper_js() {
     jQuery(document).ready(function() {
 
     	// Adds ability to link to specifics slides - must come first to work correctly   
+    	/*
     	var index = 0, hash = window.location.hash;
     	if (hash) {
     		index = /\d+/.exec(hash)[0];
     		index = (parseInt(index) || 1) - 1; // slides are zero-based
     	}
-
-      jQuery('.atslideshow').after('<ul id="atnav" class="jcarousel-skin-attachmentslideshow">').cycle({
-    		fx: 'scrollHorz',
-    		prev: '#prev',
-    		speed:  'fast',
-        next: '#next',
-	      before: onBefore,        
-        after: onAfter,
-        pager:  '#atnav',
-        timeout: 0,
-        pagerAnchorBuilder: function(idx, slide) {
-            divimgsrc = jQuery(slide).find("img").attr('rel');
-            //divimgsrc = slide.src;
-
-            return '<li><a href="#"><img src="<?php echo WP_PLUGIN_URL; ?>/attachment-slideshow/scripts/timthumb.php?src=' + divimgsrc + '&amp;w=<?php echo $at_slideshow_thumb_width_val; ?>&amp;h=<?php echo $at_slideshow_thumb_height_val; ?>&amp;zc=1" width="<?php echo $at_slideshow_thumb_width_val; ?>" height="<?php echo $at_slideshow_thumb_height_val; ?>" /></a></li>';
-        }
-    	});
-      jQuery('#goto1').click(function() { 
-        jQuery('.atslideshow').cycle(0); 
-        return false; 
-      });
-      jQuery('#atnav').jcarousel({
-        scroll: 7,
-		    visible: 7,
-		    initCallback: initCallbackFunction
-      });
-
-    	// Adds index to thumbnail links
-    	jQuery('#atnav li a').each(function(idx) {
-        jQuery(this).data('index', (++idx));
-    	});
-
-      function onAfter(curr,next,opts) {
-      	var caption = '' + (opts.currSlide + 1) + ' / ' + opts.slideCount;
-      	jQuery('.atslidepagination').html(caption);
-      }
+    	*/
+      
+      if (jQuery('.atslideshow').length > 0) {
+        jQuery('.atslideshow').after('<ul id="atnav" class="jcarousel-skin-attachmentslideshow">').cycle({
+      		fx: 'scrollHorz',
+      		prev: '#prev',
+      		speed:  'fast',
+          next: '#next',
+  	      before: onBefore,        
+          after: onAfter,
+          pager:  '#atnav',
+          timeout: 0,
+          pagerAnchorBuilder: function(idx, slide) {
+              divimgsrc = jQuery(slide).find("img").attr('rel');
+              //divimgsrc = slide.src;
   
-      function onBefore(curr,next,opts) {
-    		//Centers the active thumbnail when slideshow is playing or next/previous buttons are clicked
-    		/*
-    		var carousel = jQuery('#atnav').data('jcarousel');
-    		nextsrc = jQuery(next).find("img").attr('src');
-    		var activeIdx = jQuery('#atnav img[src="'+nextsrc+'"]').closest('a').data('index');
-    		//alert(activeIdx);
-     		if (carousel) {
-          carousel.scroll(activeIdx);
-        }
-        */
-      }
+              return '<li><a href="#"><img src="<?php echo WP_PLUGIN_URL; ?>/attachment-slideshow/scripts/timthumb.php?src=' + divimgsrc + '&amp;w=<?php echo $at_slideshow_thumb_width_val; ?>&amp;h=<?php echo $at_slideshow_thumb_height_val; ?>&amp;zc=1" width="<?php echo $at_slideshow_thumb_width_val; ?>" height="<?php echo $at_slideshow_thumb_height_val; ?>" /></a></li>';
+          }
+      	});
+        jQuery('#goto1').click(function() { 
+          jQuery('.atslideshow').cycle(0); 
+          return false; 
+        });
+        jQuery('#atnav').jcarousel({
+          scroll: 7,
+  		    visible: 7,
+  		    initCallback: initCallbackFunction
+        });
   
-    	function initCallbackFunction(carousel) {
-        jQuery('#atnav li a').bind("click",function() {
-          var idx =  jQuery(this).data('index');
-          carousel.scroll(idx);
-        }); 		
-    	};
-    	
-    	jQuery('.atslidecont .jcarousel-prev').fadeTo('slow', 0.5);
-    	jQuery('.atslidecont .jcarousel-next').fadeTo('slow', 0.5);
-
-    	jQuery(".atslidecont .jcarousel-prev").hover(function(){
-    		jQuery(".atslidecont .jcarousel-prev").fadeTo("slow", 1.0); // This sets the opacity to 100% on hover
-    	},function(){
-       		jQuery(".atslidecont .jcarousel-prev").fadeTo("slow", 0.5); // This sets the opacity back to 60% on mouseout
-    	});
-
-    	jQuery(".atslidecont .jcarousel-next").hover(function(){
-    		jQuery(".atslidecont .jcarousel-next").fadeTo("slow", 1.0); // This sets the opacity to 100% on hover
-    	},function(){
-       		jQuery(".atslidecont .jcarousel-next").fadeTo("slow", 0.5); // This sets the opacity back to 60% on mouseout
-    	});
+      	// Adds index to thumbnail links
+      	jQuery('#atnav li a').each(function(idx) {
+          jQuery(this).data('index', (++idx));
+      	});
+  
+        function onAfter(curr,next,opts) {
+        	var caption = '' + (opts.currSlide + 1) + ' / ' + opts.slideCount;
+        	jQuery('.atslidepagination').html(caption);
+        }
+    
+        function onBefore(curr,next,opts) {
+      		//Centers the active thumbnail when slideshow is playing or next/previous buttons are clicked
+      		/*
+      		var carousel = jQuery('#atnav').data('jcarousel');
+      		nextsrc = jQuery(next).find("img").attr('src');
+      		var activeIdx = jQuery('#atnav img[src="'+nextsrc+'"]').closest('a').data('index');
+      		//alert(activeIdx);
+       		if (carousel) {
+            carousel.scroll(activeIdx);
+          }
+          */
+        }
+    
+      	function initCallbackFunction(carousel) {
+          jQuery('#atnav li a').bind("click",function() {
+            var idx =  jQuery(this).data('index');
+            carousel.scroll(idx);
+          }); 		
+      	};
+      	
+      	jQuery('.atslidecont .jcarousel-prev').fadeTo('slow', 0.5);
+      	jQuery('.atslidecont .jcarousel-next').fadeTo('slow', 0.5);
+  
+      	jQuery(".atslidecont .jcarousel-prev").hover(function(){
+      		jQuery(".atslidecont .jcarousel-prev").fadeTo("slow", 1.0); // This sets the opacity to 100% on hover
+      	},function(){
+         		jQuery(".atslidecont .jcarousel-prev").fadeTo("slow", 0.5); // This sets the opacity back to 60% on mouseout
+      	});
+  
+      	jQuery(".atslidecont .jcarousel-next").hover(function(){
+      		jQuery(".atslidecont .jcarousel-next").fadeTo("slow", 1.0); // This sets the opacity to 100% on hover
+      	},function(){
+         		jQuery(".atslidecont .jcarousel-next").fadeTo("slow", 0.5); // This sets the opacity back to 60% on mouseout
+      	});
+    	}
     	    	
     });
     

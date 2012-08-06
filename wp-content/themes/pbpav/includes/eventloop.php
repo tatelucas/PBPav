@@ -11,13 +11,16 @@
               </a>
               <div class="eventdetails">
             		<h4 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h4>     
-                <p class="eventdate">
+
                 <?php 
                 $eventtime = get_post_meta($post->ID, 'datetime'); 
                 $endeventtime = get_post_meta($post->ID, 'enddatetime'); 
                 $buylink = get_post_meta($post->ID, 'infolink');
-
-
+            
+                if (strlen($eventtime[0]) > 0) { 
+                ?>
+                <p class="eventdate">                
+                <?php
               	  if (strlen($endeventtime[0]) > 0) {
               	  ?>
               	  <?php echo date('l F d', $eventtime[0]); ?> - <?php echo date('l F d, Y', $endeventtime[0]); ?>
@@ -29,6 +32,9 @@
               	  }                
                 ?>
                 </p>
+                <?php
+                }
+                ?>
                 <div class="eventexcerpt">
               		<div class="entry">
               		<?php the_excerpt(); ?>

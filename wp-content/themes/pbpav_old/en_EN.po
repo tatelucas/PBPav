@@ -1,0 +1,355 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gravy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-03 15:40-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Darren Hoyt <cutout@gmail.com>\n"
+"Language-Team: Darren Hoyt <cutout@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy\n"
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/404.php:5
+msgid "Error 404 - Not Found"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/archive.php:7
+msgid "Category Archive for"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/archive.php:10
+msgid "Tag Archive for"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/archive.php:13
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/archive.php:16
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/archive.php:19
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:125
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:135
+msgid "Archive for"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/archive.php:22
+msgid "Blog Archives"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/archive.php:35
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/attachment.php:26
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/author.php:29
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/index.php:11
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/page.php:13
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/search.php:16
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/single.php:18
+msgid "Not Found"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/attachment.php:18
+msgid "Back"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/author.php:7
+msgid "Author Archives"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/author.php:28
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:140
+msgid "Search Results"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:18
+msgid "Responses"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:19
+msgid "Leave a comment"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:25
+msgid "&laquo;Older Comments"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:28
+msgid "Newer Comments&raquo;"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:39
+msgid "Comments are closed."
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:55
+msgid "Trackbacks"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:76
+msgid "Leave a Response"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:79
+msgid "Cancel Reply"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:83
+msgid "You must be"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:86
+msgid "logged in"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:89
+msgid "to post a comment."
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:97
+msgid "Logged in as"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:99
+msgid "Log out"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:107
+msgid "Name"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:110
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:121
+msgid "(required)"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:118
+msgid "Mail (will not be published)"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:129
+msgid "Website"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:144
+msgid "Please note: comment moderation is enabled and may delay your comment. There is no need to resubmit your comment."
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/comments.php:150
+msgid "Submit Comment"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/footer.php:10
+msgid "Powered by"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/footer.php:16
+msgid "Blog Entries"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/footer.php:17
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/loop.php:21
+msgid "Comments"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:43
+msgid "Continue reading&raquo;"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:121
+msgid "Author"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:130
+msgid "Tag archive for"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:144
+msgid "404 Error (Page Not Found)"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:244
+#, php-format
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:247
+#, php-format
+msgid "%1$s &bull; %2$s"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:249
+msgid "(Edit)"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:256
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:264
+msgid "Reply"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/functions.php:265
+msgid "Log in to reply"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/header.php:41
+msgid "Home"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/loop.php:20
+msgid "by"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/loop.php:20
+msgid "on"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/loop.php:47
+msgid "Pages:"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/loop.php:56
+msgid "Tagged as:"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/loop.php:59
+msgid "Edit this entry"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/pagination.php:2
+msgid "&laquo;Older Entries"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/pagination.php:3
+msgid "Newer Entries&raquo;"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/search.php:5
+msgid "Search results for"
+msgstr ""
+
+#: /Users/darrenhoyt/Documents/www.darrenhoyt.com/demo/wordpress/wp-content/themes/gravy/sidebar.php:16
+msgid "More in"
+msgstr ""
+
+#~ msgid "Older Entries"
+#~ msgstr "Ältere Eintragungen"
+#~ msgid "Newer Entries"
+#~ msgstr "Mehr Artikel"
+#~ msgid "Post a Comment"
+#~ msgstr "Meiste Kommentare"
+#~ msgid "Reply to"
+#~ msgstr "Treffen Sie zu"
+
+#, fuzzy
+#~ msgid "Edit this entry&raquo;"
+#~ msgstr "Lesen Sie den gesamten Eintrag"
+#~ msgid "Posted on"
+#~ msgstr "An bekannt gegeben"
+#~ msgid "Archives"
+#~ msgstr "Archiv"
+#~ msgid "Categories IDs for featured categories:"
+#~ msgstr "KategorienIDs für gekennzeichnete Kategorien:"
+#~ msgid "Featured Post"
+#~ msgstr "Letzter Videobeitrag"
+#~ msgid "Ads & Sponsors"
+#~ msgstr "Reklameanzeigen"
+#~ msgid "% Comments"
+#~ msgstr "Kommentare"
+
+#, fuzzy
+#~ msgid "test Comments"
+#~ msgstr "0 Kommentare"
+#~ msgid "Apply &raquo;"
+#~ msgstr "treffen Sie zu &raquo;"
+#~ msgid "More in &lsquo;%s&rsquo;"
+#~ msgstr "Mehr Artikel &raquo;"
+#~ msgid "Error 404"
+#~ msgstr "Fehler 404"
+#~ msgid ""
+#~ "Ooops, We cannot find you the page you are looking for. You may try to "
+#~ "search our site for another keyword or use the navigational tools in this "
+#~ "website."
+#~ msgstr ""
+#~ "Die gesuchte Seite konnte nicht gefunden werden. Sie können ein anderes "
+#~ "Suchwort für eine neue Suche oder das Menü der Seite benutzen."
+#~ msgid "Archive by Category"
+#~ msgstr "Archiv nach Kategorie"
+#~ msgid "Articles in "
+#~ msgstr "Artikel in"
+#~ msgid "Archive by Tags"
+#~ msgstr "Archiv nach Tags"
+#~ msgid "Articles tagged with: "
+#~ msgstr "Artikel mit dem Tag:"
+#~ msgid "Archive by Day"
+#~ msgstr "Archiv nach Tag"
+#~ msgid "Archive by Month"
+#~ msgstr "Archiv nach Monat"
+#~ msgid "Archive by Year"
+#~ msgstr "Archiv nach Jahr"
+#~ msgid "Year"
+#~ msgstr "Jahr"
+#~ msgid "No posts found. Try a different search?"
+#~ msgstr "Keine Artikel gefunden. Möchten sie eine andere Suche probieren?"
+#~ msgid "Articles by"
+#~ msgstr "Artikel von"
+#~ msgid "said:"
+#~ msgstr "schreibt:"
+#~ msgid "at"
+#~ msgstr "auf"
+#~ msgid "Log out of this account"
+#~ msgstr "Loggen sie sich aus"
+#~ msgid "Add your comment below, or"
+#~ msgstr "Fügen sie unten ihren Kommentar hinzu, oder"
+#~ msgid "from your own site"
+#~ msgstr "von ihrer eigenen Seite."
+#~ msgid "You can also"
+#~ msgstr "Sie können außerdem"
+#~ msgid "subscribe to these comments"
+#~ msgstr "Abonnieren sie diese Kommentare"
+#~ msgid "via RSS."
+#~ msgstr "via RSS."
+#~ msgid "Be nice. Keep it clean. Stay on topic. No spam."
+#~ msgstr "Sei nett. Halt es sauber. Bleib beim Thema. Kein Spam."
+#~ msgid "(optional)"
+#~ msgstr "(optional)"
+#~ msgid "You can use these tags:"
+#~ msgstr "Sie können diese HTML-Tags benutzen:"
+#~ msgid ""
+#~ "This is a Gravatar-enabled weblog. To get your own globally-recognized-"
+#~ "avatar, please register at"
+#~ msgstr ""
+#~ "Dieser Blog hat Gravatar aktiviert. Um ihren eignen Avatar zu bekommen "
+#~ "registrieren sie sich bitte unter"
+#~ msgid "(refresh random posts)"
+#~ msgstr "(Zufällige Einträge aktualisieren)"
+#~ msgid "Most Popular"
+#~ msgstr "Beliebteste"
+#~ msgid "Entries (RSS)"
+#~ msgstr "Einträge (RSS)"
+#~ msgid "Comments (RSS)"
+#~ msgstr "Kommentare (RSS)"
+#~ msgid "Read the full story &raquo;"
+#~ msgstr "Lesen sie den gesamten Beitrag &raquo;"
+#~ msgid "<p>Read the rest of this page &raquo;</p>"
+#~ msgstr "<p>Lesen Sie die gesamte Seite &raquo;</p>"
+#~ msgid "<p><strong>Pages:</strong>"
+#~ msgstr "<p><strong>Seiten:</strong>"
+#~ msgid "Search"
+#~ msgstr "Suche"
+#~ msgid "You have just searched for"
+#~ msgstr "Sie haben gesucht nach"
+#~ msgid "Blogroll"
+#~ msgstr "Blogroll"
+#~ msgid "Tag Cloud"
+#~ msgstr "Tag Cloud"
+#~ msgid "Submitted by"
+#~ msgstr "Eingetragen von"
+

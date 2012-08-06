@@ -188,6 +188,7 @@ function event_meta_options() {
                 placement : 'popup',
                 askSecond : false,
                 format	  : '%m/%d/%Y %l:%i %p',
+                formatUtcOffset: "%: (%@)",
                 baseYear  : <?php echo date('Y'); ?>
             });
         </script>
@@ -282,6 +283,7 @@ function event_admin_init() {
     wp_enqueue_style('ui.theme', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/start/jquery-ui.css' );
 
     wp_enqueue_script('anytime', get_bloginfo('template_url') . '/js/admin/anytimec.js', array('jquery','jquery-ui-core') );
+    wp_enqueue_script('anytimetz', get_bloginfo('template_url') . '/js/admin/anytimetz.js', array('jquery','jquery-ui-core') );
 
     // load the events meta box
     add_meta_box("event-info", __("Show Information", 'PBPav'), "event_meta_options", "event", "normal", "low");

@@ -293,7 +293,8 @@ class CalendarArchives
         {
             $year = date('Y');
         }
-
+      
+        
         // Initialize variable to store category
         $category = null;
 
@@ -353,6 +354,7 @@ class CalendarArchives
 
         // Initialize variable used to store indexes for posts per day
         $postsPerDay = array();
+        $yearPostsPerDay = array();
 
         // Initialize variable used to store background images
         $backgroundImages = array();
@@ -373,6 +375,15 @@ class CalendarArchives
             //$postTime = strtotime($posts[$index]->post_date);
             $postTime = $eventtime[0];
 
+            // Post's year
+            $year = (int)date('Y', $postTime);
+            
+            // If no posts for given month then initialize array for it
+            if (!isset($yearPostsPerDay[$year]))
+            {
+                $yearPostsPerDay[$year] = array();
+            }
+
             // Post's month
             $month = (int)date('m', $postTime);
             
@@ -380,6 +391,7 @@ class CalendarArchives
             if (!isset($postsPerDay[$month]))
             {
                 $postsPerDay[$month] = array();
+                $yearPostsPerDay[$year][$month] = array();
             }
 
             // If no background images for given month then initialize array for it
@@ -395,6 +407,7 @@ class CalendarArchives
             if (!isset($postsPerDay[$month][$day]))
             {
                 $postsPerDay[$month][$day] = array();
+                $yearPostsPerDay[$year][$month][$day] = array();
             }
 
             // If no background image for given month's given day then initialize boolean flag false for it
@@ -402,9 +415,10 @@ class CalendarArchives
             {
                 $backgroundImages[$month][$day] = false;
             }
-
+            
             // Build needed data
             $postsPerDay[$month][$day][] = $index;
+            $yearPostsPerDay[$year][$month][$day][] = $index;            
 
             //TATE - if the event is a multiple day event, need to populate those days as well.
             $multidaypost = false;
@@ -423,6 +437,7 @@ class CalendarArchives
                   $newday = (int)date('d', strtotime($multiday));
                   $newmonth = (int)date('m', strtotime($multiday));
                   $postsPerDay[$newmonth][$newday][] = $index;
+                  $yearPostsPerDay[$year][$newmonth][$newday][] = $index;                  
                 }
                 $multidaycounter++;
               }

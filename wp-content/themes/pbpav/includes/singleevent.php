@@ -14,7 +14,10 @@
   if ($image[0]) {
   ?>
   <div class="eventtopimg">
-  <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&amp;h=399&amp;w=634px&amp;zc=1" alt="" />
+  <!-- 
+    <img src="<?php bloginfo('template_url'); ?>/scripts/timthumb.php?src=<?php echo $image[0] ?>&amp;h=399&amp;w=634px&amp;zc=1" alt="" />
+  -->
+  <img src="<?php echo $image[0] ?>" class="singleeventimage" alt="<?php the_title(); ?>" />
   </div>
   <?php
   }
@@ -32,7 +35,11 @@
 	  <?php
 	  } else {
 	  ?>
-	  <?php echo date('l F d, Y g:ia', $eventtime[0]); ?>
+	  <?php 
+	  if (strlen($eventtime[0]) > 0) {
+	    echo date('l F d, Y g:ia', $eventtime[0]); 
+	  }
+	  ?>
 	  <?php
 	  } 
 	  ?>
@@ -54,6 +61,9 @@
   </div><!--/badgecont-->
 
 	<div class="eventmeta">
+    <?php
+	  if (strlen($eventtime[0]) > 0) {    
+    ?>
 	  <p>
 	  <strong>When:</strong>
 	  <br />
@@ -64,11 +74,15 @@
 	  <?php
 	  } else {
 	  ?>
-	  <?php echo date('l F d, Y g:ia', $eventtime[0]); ?>
 	  <?php
+	    echo date('l F d, Y g:ia', $eventtime[0]); 
 	  }
 	  ?>
 	  </p>	 
+	  <?php
+	  }
+	  ?>    
+    
     
 	  <?php 
 	  $terms = get_the_terms($post->ID, 'location'); 
