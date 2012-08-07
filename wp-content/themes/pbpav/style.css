@@ -1003,27 +1003,37 @@ a.rsswidget, a.rsswidget:visited {
   letter-spacing: -1px !important;
 }
 
-.sociallinks a {
+.smallsocialicons a {
   text-indent: -9999px;
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: none !important;
 }
 
-.sociallinks {
-  margin: 5px 0 0 75px;
+.smallsocialicons {
+  margin: 0;
+  float: left;
+  padding: 0 0 0 5px;
+  background: #000;
+  border-left: 1px solid #333;  
 }
 
-.sociallinks li {
+.smallsocialicons li {
   display: block !important;
   border: none !important;
   float: left;
-  width: 24px;
-  margin: 5px 10px 0 0;
+  width: 20px;
+  height: 22px;
+  background: #000;
+  padding: 0 3px 0 0;
+  margin: 3px 5px 0 0;
 }
 
-.fblink {
-  background: url(images/sociallarge.png) no-repeat;
+#sidebar #widget_sp_image-7 .widget_sp_image-image-link img {
+-webkit-box-shadow: inset 0px 0px 0px 1px #97979 !important;
+        box-shadow: inset 0px 0px 0px 1px #97979 !important;
 }
 
 .twtr-widget h3 {
@@ -1031,27 +1041,19 @@ a.rsswidget, a.rsswidget:visited {
 }
 
 .fblink {
-  background: url(images/sociallarge.png) no-repeat 0 0;
+  background: url(images/socialfb.png) no-repeat 0 0 !important;
 }
 
 .twitterlink {
-  background: url(images/sociallarge.png) no-repeat -24px 0;
-}
-
-.applelink {
-  background: url(images/sociallarge.png) no-repeat -48px 0;
-}
-
-.kclink {
-  background: url(images/sociallarge.png) no-repeat -72px 0;
+  background: url(images/socialtw.png) no-repeat 0 0 !important;
 }
 
 .flickrlink {
-  background: url(images/sociallarge.png) no-repeat -96px 0;
+  background: url(images/socialfl.png) no-repeat 0 0 !important;
 }
 
 .youtubelink {
-  background: url(images/sociallarge.png) no-repeat -120px 0;
+  background: url(images/socialyt.png) no-repeat 0 0 !important;
 }
 
 .page #content {

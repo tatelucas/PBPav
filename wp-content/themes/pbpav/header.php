@@ -19,7 +19,7 @@ $content = ob_get_clean();
 { echo '<meta name="robots" content="index,follow" />'; } 
 else { echo '<meta name="robots" content="noindex,follow" />'; } ?>
 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen,projection" />
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?<?php echo date('mdY'); ?>" type="text/css" media="screen,projection" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/print.css" type="text/css" media="print" />
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -99,6 +99,14 @@ GA_googleFetchAds();
     </div><!--/branding-->
     
     <div class="kingsref">
+      <div class="smallsocialicons">
+        <ul>
+        <li><a target="_blank" href="http://www.facebook.com/powerbalancepavilion" class="fblink">Facebook</a></li>
+        <li><a target="_blank" href="http://www.twitter.com/pbpav" class="twitterlink">Twitter</a></li>
+        <li><a target="_blank" href="http://www.flickr.com/photos/backstagepass/" class="flickrlink">Flickr</a></li>
+        <li><a target="_blank" href="http://www.youtube.com/pbpflix" class="youtubelink">YouTube</a></li>
+        </ul>
+      </div>
       <div class="kingscomlink"><a href="http://www.kings.com">Kings.com</a></div>
       <div class="topfacebook"><iframe src="http://www.facebook.com/plugins/like.php?app_id=221271514579314&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpowerbalancepavilion&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe></div>
       <div class="topgoogle"><!-- Place this tag in your head or just before your close body tag -->
